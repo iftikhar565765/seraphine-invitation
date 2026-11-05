@@ -12,7 +12,7 @@
     {
       "binding": "DB",
       "database_name": "seraphine-invitations",
-      "database_id": "REPLACE_WITH_YOUR_NEW_D1_DATABASE_ID"
+      "database_id": "0fdfdaa0-31fe-4e56-86df-139ead0c3005"
     }
   ]
 }
