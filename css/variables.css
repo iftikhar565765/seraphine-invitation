@@ -1,0 +1,98 @@
+/* ═══════════════════════════════════════════════════════════════
+   NOCTURNE · variables.css
+   Design tokens — the whole visual identity in one place.
+   A midnight sky, champagne-gold hairlines, late roses and
+   candlelight. The token names follow the editor's colour roles
+   so the theme picker recolours every surface. The design reads
+   dark-first: --night is the sky, --ivory the moonlit ink.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Palette (theme presets refine these at runtime) ──────────
+     midnight     : deep evening blue, champagne gold   (default)
+     burgundy     : wine-dark night, old gold
+     rose         : plum & mauve, rosy candlelight
+     olive        : forest evening, brass candle glow        */
+  --burgundy:      #394253;
+  --burgundy-deep: #283141;
+  --wine:          #202733;
+  --crimson:       #65718A;
+  --ivory:         #F5F3EE;
+  --paper-raised:  #FAF9F5;
+  --parchment:     #E8E6E0;
+  --champagne:     #C8B99A;
+  --champagne-soft:#B2A17F;
+  --olive:         #777D83;
+  --olive-deep:    #626970;
+  --sage:          #A1A7AA;
+  --rose:          #B8A0A7;
+  --ink:           #25282C;
+  --ink-soft:      #484D53;
+  --charcoal:      #686D72;
+  /* dark editorial atmosphere — the whole of the night */
+  --night:         #171C26;
+  --night-deep:    #10141C;
+  --gold:          #B2A17F;
+
+  /* ── Derived night tokens — computed from the theme colours,
+     so every theme preset recolours them automatically ─────── */
+  --sky-1: var(--night-deep);
+  --sky-2: color-mix(in srgb, var(--night) 82%, var(--burgundy) 18%);
+  --glass:        color-mix(in srgb, var(--night) 78%, transparent);
+  --glass-deep:   color-mix(in srgb, var(--night-deep) 88%, transparent);
+  --glass-edge:   color-mix(in srgb, var(--champagne) 26%, transparent);
+  --gilding:      color-mix(in srgb, var(--champagne) 82%, white 18%);
+  --gilding-soft: color-mix(in srgb, var(--champagne) 55%, transparent);
+  --moonlit:      color-mix(in srgb, var(--ivory) 88%, var(--champagne) 12%);
+  --moonlit-soft: color-mix(in srgb, var(--ivory) 58%, transparent);
+  --night-ink:    color-mix(in srgb, var(--ivory) 66%, transparent);
+  --night-faint:  color-mix(in srgb, var(--ivory) 38%, transparent);
+  --candle:       color-mix(in srgb, var(--champagne) 46%, #E8C98F 54%);
+
+  /* ── Typography — five voices, five jobs ─────────────────────
+     Editorial     : Italiana — grand thin caps, the fashion voice
+     Romantic serif: Cormorant Garamond — prose, leads, values
+     Expressive    : Mrs Saint Delafield — names & signature script
+     Handwritten   : La Belle Aurore — annotations & tiny notes
+     Functional    : Jost — labels, nav, forms                */
+  --font-editorial: 'Italiana', 'Didot', 'Times New Roman', serif;
+  --font-display: 'Cormorant Garamond', 'Cormorant', 'Times New Roman', Georgia, serif;
+  --font-script:  'Mrs Saint Delafield', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+  --font-hand:    'La Belle Aurore', 'Bradley Hand', 'Segoe Script', cursive;
+  --font-body:    'Jost', 'Century Gothic', 'Helvetica Neue', Arial, sans-serif;
+
+  /* fluid scale */
+  --fs-eyebrow:   clamp(.6rem, 1.6vw, .68rem);
+  --fs-small:     clamp(.74rem, 1.8vw, .84rem);
+  --fs-body:      clamp(1.02rem, 2.2vw, 1.1rem);
+  --fs-lead:      clamp(1.12rem, 2.5vw, 1.24rem);
+  --fs-h3:        clamp(1.3rem, 3.6vw, 1.55rem);
+  --fs-h2:        clamp(2rem, 6.5vw, 3.2rem);
+  --fs-h1:        clamp(2.6rem, 9.5vw, 5.4rem);
+  --fs-script:    clamp(2.4rem, 9vw, 5.6rem);
+  --fs-script-xl: clamp(3.4rem, 14vw, 8.6rem);
+  --fs-date-hero: clamp(3.4rem, 13vw, 8.4rem);
+
+  /* ── Layout ─────────────────────────────────────────────────── */
+  --w-content: 78rem;
+  --w-narrow:  52rem;
+  --w-text:     38rem;
+  --pad-section: clamp(4.2rem, 12vh, 8.5rem);
+  --pad-gutter: clamp(1.25rem, 5vw, 3rem);
+
+  /* ── Hairlines & shadows — gilded edges on the night ────────── */
+  --hairline: 1px solid color-mix(in srgb, var(--champagne) 24%, transparent);
+  --hairline-strong: 1px solid color-mix(in srgb, var(--champagne) 42%, transparent);
+  --hairline-light: 1px solid color-mix(in srgb, var(--ivory) 16%, transparent);
+  --shadow-card:  0 1px 2px rgba(4, 6, 12, .5), 0 24px 60px rgba(4, 6, 12, .45);
+  --shadow-lift:  0 1px 3px rgba(4, 6, 12, .5), 0 26px 70px rgba(4, 6, 12, .55);
+  --shadow-flat:  0 1px 3px rgba(4, 6, 12, .4), 0 10px 26px rgba(4, 6, 12, .35);
+  --shadow-seal:  0 3px 8px rgba(4, 6, 12, .55), 0 14px 30px rgba(4, 6, 12, .4);
+
+  /* ── Motion ──────────────────────────────────────────────────── */
+  --ease-soft: cubic-bezier(.22, .61, .21, 1);
+  --ease-paper: cubic-bezier(.34, .9, .28, 1);
+  --t-fast: .28s;
+  --t-med:  .55s;
+  --t-slow: .72s;
+}
