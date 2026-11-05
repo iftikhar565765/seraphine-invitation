@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   NOCTURNE · config.js
+   SERAPHINE · config.js
    ---------------------------------------------------------------
    Main personalisation data for the site and visual editor.
    Longer copy, palette, and theme are editable here. Values
@@ -8,14 +8,14 @@
    ═══════════════════════════════════════════════════════════════ */
 
 window.HEIRLOOM = {
-  templateId: "nocturne",
+  templateId: "seraphine",
 
   /* ── The couple — SAMPLE content, replace with your names ────── */
   couple: {
-    partnerOne: "Aurelia",                   // SAMPLE
-    partnerTwo: "Silas",                     // SAMPLE
-    initials:  "A · S",                      // SAMPLE — used on seals & monograms
-    namesLine: "Aurelia & Silas"             // SAMPLE — used across the site
+    partnerOne: "Eleanora",                  // SAMPLE
+    partnerTwo: "Sebastian",                 // SAMPLE
+    initials:  "E · S",                      // SAMPLE — used on seals & monograms
+    namesLine: "Eleanora & Sebastian"        // SAMPLE — used across the site
   },
 
   /* ── The wedding date & time ─────────────────────────────────
@@ -26,19 +26,19 @@ window.HEIRLOOM = {
            The sample below = 18 September 2027, 6:30 PM, GMT+1 (BST).
      display / words / numerals : how the date reads in the copy. */
   wedding: {
-    iso: "2027-09-18T18:30:00+01:00",                              // EDIT
-    endIso: "2027-09-19T01:00:00+01:00",                           // EDIT — end of the celebration
-    display: "Saturday, 18 September 2027 · 6:30 in the evening",  // EDIT
-    zoneLabel: "",                                                 // EDIT — optional note for guests abroad, e.g. "BST"
+    iso: "2027-09-18T18:30:00+01:00",                                        // EDIT
+    endIso: "2027-09-19T01:00:00+01:00",                                     // EDIT — end of the celebration
+    display: "Saturday, 18 September 2027 · 6:30 in the evening",            // EDIT
+    zoneLabel: "",                                                           // EDIT — optional note for guests abroad, e.g. "BST"
     words: "Saturday · The Eighteenth of September · Two Thousand Twenty-Seven", // EDIT
-    numerals: "18 · 09 · 2027",                                    // EDIT
-    eventTitle: "Aurelia & Silas — Wedding"                        // EDIT (calendar entry)
+    numerals: "18 · 09 · 2027",                                              // EDIT
+    eventTitle: "Eleanora & Sebastian — Wedding"                             // EDIT (calendar entry)
   },
 
   /* ── The venue ──────────────────────────────────────────────── */
   venue: {
-    name: "The Orangery at Vesper Hill",        // SAMPLE
-    address: "Vesper Hill Estate, Cotswolds",   // SAMPLE
+    name: "The Grand Orangery, Palais Lumière", // SAMPLE
+    address: "Palais Lumière, Loire Valley, France", // SAMPLE
     mapsQuery: "",                              // optional Maps search override
     /* A full URL here overrides the map link built above, e.g. an
        exact Google Maps place link or an Apple Maps URL.          */
@@ -48,10 +48,10 @@ window.HEIRLOOM = {
   /* ── Copy shown throughout the invitation ────────────────────
      The visual editor can change these values without editing HTML. */
   content: {
-    pageTitle: "Aurelia & Silas · 18 September 2027 — A Night Under the Stars",
-    pageDescription: "Aurelia and Silas request the pleasure of your company in the orangery at Vesper Hill, Cotswolds, on Saturday the eighteenth of September 2027. Open your invitation.",
-    socialTitle: "Aurelia & Silas — An Invitation · 18.09.2027",
-    socialDescription: "Candlelight, late roses and a sky full of stars — you are cordially invited.",
+    pageTitle: "Eleanora & Sebastian · 18 September 2027 — A Royal Palace Wedding",
+    pageDescription: "Eleanora and Sebastian request the pleasure of your company at the palace — gilded gates, a hall of mirrors and one perfect evening, on Saturday the eighteenth of September 2027. Open your invitation.",
+    socialTitle: "Eleanora & Sebastian — An Invitation · 18.09.2027",
+    socialDescription: "Gilded gates, candlelit halls and a forever kind of love — you are cordially invited.",
     navStory: "Story",
     navDetails: "Details",
     navVenue: "Venue",
@@ -66,69 +66,69 @@ window.HEIRLOOM = {
     menuRsvp: "Kindly Respond",
     menuCountdown: "The Countdown",
     menuClosing: "A Closing Note",
-    openingEyebrow: "An evening under the stars, from",
-    openingHint: "You are cordially invited",
-    openButton: "Open the Invitation",
+    openingEyebrow: "You are respectfully invited to the wedding of",
+    openingHint: "Touch the gates to enter",
+    openButton: "Enter the Palace",
     skipButton: "Skip straight to the invitation",
-    envelopeAddress: "friends & family",
+    envelopeAddress: "their honoured guests",
     invitationEyebrow: "Together with their families",
-    invitationLead: "request the pleasure of your company as they exchange vows by candlelight and dance the night away beneath a sky of stars.",
-    invitationVenueSuffix: "· Cotswolds",
+    invitationLead: "request the pleasure of your company at the marriage celebration, to be held in the grand hall of the palace.",
+    invitationVenueSuffix: "· Loire Valley",
     storyKicker: "№ 02 · Their Story",
-    storyTitle: "Our",
-    storyTitleScript: "Story",
-    storyParagraphOne: "Every constellation begins with a single light, and ours appeared on a cold night in November — a delayed train, a shared platform, and one conversation that outlasted the last departure.",
-    storyParagraphTwo: "Six years, two cities and one stubborn little dog later, we are finally drawing our own map of the sky. Nothing would mean more than to have you standing beside us when we do.",
-    storyQuote: "I have loved the stars too fondly to be fearful of the night.",
-    storyQuoteLabel: "— Sarah Williams, read aloud on our first walk home",
-    storyNote: "somewhere between moonrise & forever",
-    storyNoteCredit: "— a note we keep returning to",
-    storyCaptionOne: "the first chapter",
+    storyTitle: "Once upon",
+    storyTitleScript: "a time",
+    storyParagraphOne: "Every great story deserves a palace, and ours began far more humbly — a crowded bookshop, one shared umbrella, and a first conversation that outlasted the rain.",
+    storyParagraphTwo: "Six years, two cities and a thousand small kindnesses later, we are writing our next chapter in the grandest language we know — love. Nothing would mean more than to have you standing beside us when we do.",
+    storyQuote: "Whatever our souls are made of, his and mine are the same.",
+    storyQuoteLabel: "— Emily Brontë, read aloud on our first walk home",
+    storyNote: "chapter the first, and all the rest",
+    storyNoteCredit: "— written in the margin of a menu, on our first trip",
+    storyCaptionOne: "the beginning",
     storyCaptionTwo: "always, us",
-    storyCaptionFour: "the long way home",
-    storyAside: "the beginning of always",
+    storyCaptionFour: "the long gallery",
+    storyAside: "and they lived",
     saveDateTitle: "Save the Date",
-    saveDateCrossing: "moonrise, and all the years after",
-    saveDateNote: "The date is set. Add it to your calendar and keep these details close.",
+    saveDateCrossing: "an evening of candlelight & crowns",
+    saveDateNote: "The court is assembled. Add the date to your calendar and keep these particulars close.",
     calendarDownloadLabel: "Add to Calendar",
     calendarGoogleLabel: "Google Calendar",
     detailsKicker: "№ 04 · The Particulars",
     detailsTitleFirst: "Wedding",
     detailsTitleSecond: "Details",
-    detailsIntro: "The evening, at a glance.",
+    detailsIntro: "The day, at a glance.",
     ceremonyLabel: "The Ceremony",
     ceremonyTime: "Half past six",
-    ceremonyNote: "Vows in the candlelit orangery as the sun goes down.",
+    ceremonyNote: "Vows in the candlelit chapel as the vesper bells ring.",
     receptionLabel: "The Reception",
     receptionTime: "Eight o'clock",
-    receptionNote: "Dinner by candlelight and dancing under the string lights.",
+    receptionNote: "Dinner and dancing in the hall of mirrors, until the stars give out.",
     kindlyReplyLabel: "Kindly Reply",
-    kindlyReplyNote: "Kindly send your response using the reply form further below.",
+    kindlyReplyNote: "Kindly send your response using the reply card further below.",
     particularsEyebrow: "The Particulars",
     particularsDateLabel: "The Date",
     particularsPlaceLabel: "The Place",
     particularsAttireLabel: "The Attire",
-    particularsAttire: "Evening formal",
-    particularsAttireNote: "Deep tones and quiet shine are welcome — wear what makes you feel wonderful.",
+    particularsAttire: "Black tie",
+    particularsAttireNote: "Evening dress with a flourish of gold is most welcome.",
     particularsCarriagesLabel: "The Carriages",
     particularsCarriagesTime: "At one o'clock",
-    particularsCarriagesNote: "The last dance ends as the candles burn low.",
-    paletteKicker: "№ 05 · A Note on Colour",
+    particularsCarriagesNote: "The last waltz ends as the candles burn low.",
+    paletteKicker: "№ 05 · The Colours of the Court",
     paletteTitleFirst: "The wedding",
     paletteTitleSecond: "palette",
-    paletteIntro: "A study in midnight and champagne gold, warmed by candle glow and late roses — chosen to feel at home beneath the evening sky.",
-    dressCodeLabel: "Attire · Evening celebration",
-    dressCodeTitle: "Evening formal",
-    dressCodeNote: "A little dressed up, a little starlit. Deep tones are welcome, but the palette is only a suggestion — wear what makes you feel wonderful.",
+    paletteIntro: "Midnight navy and leaf gold, warmed by candlelight and court wine — the colours of the palace at evening.",
+    dressCodeLabel: "Attire · The Court Dress",
+    dressCodeTitle: "Black tie",
+    dressCodeNote: "A little dressed up, a little gilded. Deep tones and quiet shine are welcome — wear what makes you feel wonderful.",
     weddingDayKicker: "№ 06 · The Celebration",
     weddingDayTitleFirst: "The Wedding",
     weddingDayTitleSecond: "Day",
     venueKicker: "№ 07 · The Place",
-    venueDescription: "A Victorian glass orangery on a quiet hill — where long tables, a hundred candles and the string lights drift slowly into the deep blue of the evening.",
+    venueDescription: "A baroque palace above the river — gilded gates, a hall of mirrors and an orangery glowing with a thousand candles for one perfect evening.",
     venueCeremonyLabel: "Ceremony",
-    venueCeremonyText: "in the orangery, as the sun sets",
+    venueCeremonyText: "in the palace chapel, as the sun sets",
     venueReceptionLabel: "Reception",
-    venueReceptionText: "dinner & dancing beneath the string lights",
+    venueReceptionText: "dinner & dancing in the hall of mirrors",
     mapButton: "View Location",
     rsvpKicker: "№ 08 · Your Reply",
     rsvpTitle: "Kindly Respond",
@@ -154,34 +154,34 @@ window.HEIRLOOM = {
     countdownHoursLabel: "Hours",
     countdownMinutesLabel: "Minutes",
     countdownSecondsLabel: "Seconds",
-    countdownKicker: "№ 09 · Counting the Moments",
-    countdownTitle: "until we say",
+    countdownKicker: "№ 09 · The Grand Countdown",
+    countdownTitle: "counting the hours until",
     countdownPromise: "“I do”",
     closingScript: "with all our love",
-    closingMessage: "Thank you, from the bottom of our hearts, for being part of our story. We cannot wait to celebrate with you among the candles and the late roses, under a sky full of stars.",
-    footerTagline: "A night, a vow, a forever."
+    closingMessage: "Thank you, from the depths of our hearts, for being part of our story. We cannot wait to celebrate with you among the candles and the gilded arches — an evening worthy of a fairy tale.",
+    footerTagline: "A palace, a vow, a forever."
   },
 
   palette: [
-    { name: "Ivory Moon",   color: "#F2EDE2" },
-    { name: "Champagne Gold", color: "#C9A86A" },
-    { name: "Midnight",     color: "#1A2238" },
-    { name: "Dusty Mauve",  color: "#B58AA6" },
-    { name: "Eucalyptus",   color: "#8FA392" }
+    { name: "Midnight Navy", color: "#1C2438" },
+    { name: "Leaf Gold",     color: "#C6A55C" },
+    { name: "Ivory Parchment", color: "#F1EAD8" },
+    { name: "Court Wine",    color: "#6E2434" },
+    { name: "Laurel",        color: "#7C8464" }
   ],
-  theme: "midnight",
+  theme: "gilt",
   themeColors: {},
   fonts: {
-    editorial: "italiana",
+    editorial: "marcellus",
     display: "cormorant",
-    script: "mrsSaintDelafield",
+    script: "pinyon",
     hand: "laBelle",
     body: "jost"
   },
 
   /* ── Wedding-day moments — SAMPLE words for the wedding programme.
      Use one short word per entry; an empty list hides the section. */
-  moments: ["Arrival", "Vows", "Gathering", "Feast", "Toasts", "Cake", "Dancing"],
+  moments: ["Arrival", "Vows", "Vespers", "The Feast", "Toasts", "The Waltz", "Carriages"],
 
   /* ── RSVP ─────────────────────────────────────────────────────
      endpoint : leave "" for the honest demonstration mode — the

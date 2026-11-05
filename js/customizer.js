@@ -518,7 +518,7 @@
   }
 
   function prepareConfigForPublish() {
-    config.templateId = config.templateId || 'nocturne';
+    config.templateId = config.templateId || 'seraphine';
     sendPreview();
     return Promise.resolve(clone(config));
   }
@@ -1149,19 +1149,19 @@
   /* ── design step: curated moods & voices ───────────────────── */
 
   var THEME_META = [
-    { key: 'burgundy', name: 'Burgundy nocturne', chips: ['#5D2029', '#F7F4EE', '#CDBB9A', '#24090D'] },
-    { key: 'rose', name: 'Plum & mauve', chips: ['#70404A', '#FAF4EF', '#D5B6A1', '#2A171C'] },
-    { key: 'olive', name: 'Forest evening', chips: ['#53513A', '#F8F5EC', '#CBB98E', '#22231B'] },
-    { key: 'midnight', name: 'Midnight blue', chips: ['#394253', '#F5F3EE', '#C8B99A', '#171C26'] }
+    { key: 'gilt', name: 'Gilt & Midnight', chips: ['#8C7442', '#F6F1E3', '#C8B486', '#151B29'] },
+    { key: 'royal', name: 'Royal Wine', chips: ['#6E2434', '#F7F1E4', '#C9AE7E', '#1D0E13'] },
+    { key: 'verdant', name: 'Imperial Garden', chips: ['#5E6B4F', '#F7F4E9', '#C6B183', '#171D14'] },
+    { key: 'porcelain', name: 'Porcelain & Gilt', chips: ['#4E6E8E', '#F8F5EC', '#C9B58C', '#16202C'] }
   ];
 
   var TYPE_PAIRINGS = [
-    { name: 'Starlit Editorial', fonts: { editorial: 'italiana', display: 'cormorant', script: 'mrsSaintDelafield', hand: 'laBelle', body: 'jost' } },
-    { name: 'Moonlit Romance', fonts: { editorial: 'prata', display: 'ebGaramond', script: 'pinyon', hand: 'caveat', body: 'dmSans' } },
-    { name: 'Modern Eclipse', fonts: { editorial: 'dmSerif', display: 'lora', script: 'allura', hand: 'shadowsIntoLight', body: 'montserrat' } },
-    { name: 'Gallery Noir', fonts: { editorial: 'italiana', display: 'prata', script: 'parisienne', hand: 'nothingYouCouldDo', body: 'lato' } },
-    { name: 'Old Observatory', fonts: { editorial: 'libreBaskerville', display: 'cardo', script: 'tangerine', hand: 'cedarville', body: 'karla' } },
-    { name: 'Velvet Storybook', fonts: { editorial: 'crimsonPro', display: 'cormorant', script: 'alexBrush', hand: 'homemadeApple', body: 'lato' } }
+    { name: 'Court Royal', fonts: { editorial: 'marcellus', display: 'cormorant', script: 'pinyon', hand: 'laBelle', body: 'jost' } },
+    { name: 'Gilded Didone', fonts: { editorial: 'bodoni', display: 'playfair', script: 'greatVibes', hand: 'caveat', body: 'dmSans' } },
+    { name: 'Palace Italiana', fonts: { editorial: 'italiana', display: 'cormorant', script: 'parisienne', hand: 'cedarville', body: 'jost' } },
+    { name: 'Vellum & Ink', fonts: { editorial: 'libreCaslon', display: 'crimsonPro', script: 'allura', hand: 'homemadeApple', body: 'karla' } },
+    { name: 'Regency Romance', fonts: { editorial: 'prata', display: 'ebGaramond', script: 'alexBrush', hand: 'shadowsIntoLight', body: 'montserrat' } },
+    { name: 'Empire Modern', fonts: { editorial: 'dmSerif', display: 'lora', script: 'tangerine', hand: 'nothingYouCouldDo', body: 'outfit' } }
   ];
 
   function fontPreviewFamily(font) {
@@ -1234,7 +1234,7 @@
       });
       card.appendChild(chips);
       card.appendChild(el('span', 'choice-card__name', theme.name));
-      if ((config.theme || 'midnight') === theme.key) card.classList.add('is-selected');
+      if ((config.theme || 'gilt') === theme.key) card.classList.add('is-selected');
       card.addEventListener('click', function () {
         if (config.theme === theme.key) return;
         config.theme = theme.key;
@@ -1332,12 +1332,12 @@
 
       groupLabel(inner, 'The website colours');
       var themeColorDefaults = {
-        burgundy: { primary: '#5D2029', darkBackground: '#24090D', paper: '#F7F4EE', accent: '#CDBB9A', botanical: '#777957', rose: '#C5A0A0' },
-        rose: { primary: '#70404A', darkBackground: '#2A171C', paper: '#FAF4EF', accent: '#D5B6A1', botanical: '#81706B', rose: '#D19DA4' },
-        olive: { primary: '#53513A', darkBackground: '#22231B', paper: '#F8F5EC', accent: '#CBB98E', botanical: '#777957', rose: '#C5A0A0' },
-        midnight: { primary: '#394253', darkBackground: '#171C26', paper: '#F5F3EE', accent: '#C8B99A', botanical: '#777D83', rose: '#B8A0A7' }
+        gilt:      { primary: '#8C7442', darkBackground: '#151B29', paper: '#F6F1E3', accent: '#C8B486', botanical: '#7A8464', rose: '#C9A9A0' },
+        royal:     { primary: '#6E2434', darkBackground: '#1D0E13', paper: '#F7F1E4', accent: '#C9AE7E', botanical: '#77804F', rose: '#C89C9C' },
+        verdant:   { primary: '#5E6B4F', darkBackground: '#171D14', paper: '#F7F4E9', accent: '#C6B183', botanical: '#777957', rose: '#C5A0A0' },
+        porcelain: { primary: '#4E6E8E', darkBackground: '#16202C', paper: '#F8F5EC', accent: '#C9B58C', botanical: '#77808A', rose: '#B8A5A7' }
       };
-      var activeThemeColors = themeColorDefaults[config.theme] || themeColorDefaults.burgundy;
+      var activeThemeColors = themeColorDefaults[config.theme] || themeColorDefaults.gilt;
       var palette = el('div', 'palette-editor');
       [
         ['primary', 'Primary'],

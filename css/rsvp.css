@@ -1,270 +1,221 @@
 /* ═══════════════════════════════════════════════════════════════
-   NOCTURNE · rsvp.css
-   The reply card's controls: gold under-ruled inputs, starlit
-   radio diamonds, a gilded button, honest states.
+   SERAPHINE · rsvp.css
+   The reply card — an engraved ivory plate laid upon the palace
+   wall. Ink on paper, hairline fields, a gilded focus.
    ═══════════════════════════════════════════════════════════════ */
 
-.rsvp-form {
-  display: grid;
-  gap: clamp(1.5rem, 4vw, 2rem);
-  text-align: left;
+.scene--rsvp { overflow: visible; }
+
+.watermark-script {
+  position: absolute;
+  left: 50%;
+  top: 4.2rem;
+  transform: translateX(-50%);
+  font-family: var(--font-script);
+  font-size: clamp(4.5rem, 13vw, 9rem);
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--champagne) 8%, transparent);
+  pointer-events: none;
+  user-select: none;
 }
 
-.rsvp-honeypot {
+.rsvp-card {
+  position: relative;
+  padding: clamp(2.4rem, 6.5vw, 4rem) clamp(1.4rem, 5vw, 3.4rem);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--paper-raised) 96%, transparent), var(--paper-raised));
+  border: 1px solid color-mix(in srgb, var(--burgundy) 30%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--burgundy) 14%, transparent);
+  outline-offset: 6px;
+  box-shadow: var(--shadow-plate);
+  color: var(--ink);
+}
+
+.rsvp-title {
+  margin: 0 0 .5rem;
+  text-align: center;
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.rsvp-deadline {
+  margin: 0 0 1.2rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-lead);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.rsvp-ornament {
+  width: clamp(180px, 26vw, 250px);
+  margin: 0 auto 2rem;
+  color: color-mix(in srgb, var(--burgundy) 55%, var(--champagne) 45%);
+}
+
+/* ── Fields — hairlines on paper ─────────────────────────────── */
+.rsvp-form { display: grid; gap: 1.5rem; }
+.field {
+  display: grid;
+  gap: .45rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.field label,
+.field-legend {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 400;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--burgundy) 76%, var(--ink) 24%);
+  padding: 0;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  padding: .65em .2em;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 26%, transparent);
+  border-radius: 0;
+  transition: border-color var(--t-fast) var(--ease-soft);
+}
+.field textarea { resize: vertical; min-height: 2.8em; line-height: 1.6; }
+.field input::placeholder,
+.field textarea::placeholder { color: color-mix(in srgb, var(--ink) 38%, transparent); font-style: italic; }
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+.field.is-invalid input,
+.field.is-invalid textarea { border-bottom-color: #A03446; }
+
+.field-error {
+  margin: .2rem 0 0;
+  font-size: var(--fs-small);
+  color: #A03446;
+}
+
+/* attendance — gilded diamond radios */
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem 2.2rem;
+  padding-top: .35rem;
+}
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.choice input {
   position: absolute;
-  left: -10000px;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.choice .diamond {
+  width: 13px;
+  height: 13px;
+  transform: rotate(45deg);
+  border: 1px solid color-mix(in srgb, var(--ink) 55%, transparent);
+  transition: background var(--t-fast) var(--ease-soft),
+              border-color var(--t-fast) var(--ease-soft),
+              box-shadow var(--t-fast) var(--ease-soft);
+}
+.choice input:checked + .diamond {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 22%, transparent);
+}
+.choice input:focus-visible + .diamond {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* honeypot — genuinely hidden from people */
+.rsvp-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
   width: 1px;
   height: 1px;
   overflow: hidden;
 }
 
-/* ── Under-ruled text fields ────────────────────────────────── */
-.field { display: grid; gap: .45rem; }
-.field--half-row { grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 1.6rem); }
-.field--half-row .field { gap: .45rem; }
-
-.field label,
-.field-legend {
-  font-family: var(--font-body);
-  font-size: .62rem;
-  font-weight: 500;
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  color: var(--night-faint);
-}
-
-fieldset.field { border: 0; padding: 0; margin: 0; min-width: 0; }
-.field-legend { border: 0; padding: 0; margin: 0; }
-
-.field input[type="text"],
-.field input[type="email"],
-.field input[type="number"],
-.field select,
-.field textarea {
-  width: 100%;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--ivory) 22%, transparent);
-  border-radius: 0;
-  padding: .55rem .1rem .65rem;
-  color: var(--ivory);
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2.8vw, 1.2rem);
-  transition: border-color var(--t-fast) var(--ease-soft), background-color var(--t-fast);
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-.field textarea {
-  resize: vertical;
-  min-height: 5.2rem;
-  line-height: 1.55;
-}
-
-.field input:focus-visible,
-.field input[type="number"]:focus-visible,
-.field select:focus-visible,
-.field textarea:focus-visible {
-  outline: none;
-  border-bottom-color: var(--champagne);
-  background: color-mix(in srgb, var(--champagne) 7%, transparent);
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
-  color: color-mix(in srgb, var(--ivory) 34%, transparent);
-  font-style: italic;
-}
-
-.field input[type="number"] {
-  max-width: 8.5rem;
-  -moz-appearance: textfield;
-}
-
-.field input[type="number"]::-webkit-outer-spin-button,
-.field input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.field select {
-  cursor: pointer;
-  background-image: linear-gradient(45deg, transparent 50%, var(--champagne) 50%),
-                    linear-gradient(135deg, var(--champagne) 50%, transparent 50%);
-  background-position: calc(100% - 14px) 55%, calc(100% - 9px) 55%;
-  background-size: 5px 5px;
-  background-repeat: no-repeat;
-  padding-right: 2rem;
-}
-
-.field select:invalid { color: color-mix(in srgb, var(--ivory) 34%, transparent); }
-
-.field select option {
-  background: var(--night);
-  color: var(--ivory);
-}
-
-/* ── Attendance choices — starlit radio diamonds ────────────── */
-.choices {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .9rem;
-}
-
-@media (max-width: 30rem) {
-  .choices { grid-template-columns: 1fr; }
-}
-
-.choice {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  padding: .95rem 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--ivory) 14%, transparent);
-  border-radius: 1px;
-  background: transparent;
-  cursor: pointer;
-  transition: border-color var(--t-fast) var(--ease-soft),
-              box-shadow var(--t-fast) var(--ease-soft);
-}
-
-.choice input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.choice .diamond {
-  width: 13px;
-  height: 13px;
-  flex: none;
-  border: 1px solid var(--champagne-soft);
-  transform: rotate(45deg);
-  background: transparent;
-  transition: background-color var(--t-fast) var(--ease-soft),
-              box-shadow var(--t-fast) var(--ease-soft);
-}
-
-.choice span.text {
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  color: var(--night-ink);
-  transition: color var(--t-fast) var(--ease-soft);
-}
-
-.choice:hover {
-  border-color: var(--champagne-soft);
-  box-shadow: 0 4px 16px rgba(4, 6, 12, .3);
-}
-
-.choice:has(input:checked) {
-  border-color: var(--champagne-soft);
-  background: color-mix(in srgb, var(--champagne) 8%, transparent);
-}
-
-.choice:has(input:checked) .diamond {
-  background: var(--candle);
-  border-color: var(--candle);
-  box-shadow:
-    0 0 10px 1px color-mix(in srgb, var(--candle) 45%, transparent),
-    0 0 0 2px color-mix(in srgb, var(--night) 80%, transparent),
-    0 0 0 3.5px color-mix(in srgb, var(--champagne) 34%, transparent);
-}
-
-.choice:has(input:checked) .text { color: var(--gilding); }
-
-.choice input:focus-visible + .diamond {
-  outline: 2px solid var(--champagne);
-  outline-offset: 3px;
-}
-
-/* ── Honest states ──────────────────────────────────────────── */
-.field.is-invalid input,
-.field.is-invalid select,
-.field.is-invalid textarea { border-bottom-color: color-mix(in srgb, var(--rose) 82%, #D98A8A); }
-
-.field-error {
-  margin: 0;
-  font-size: var(--fs-small);
-  color: color-mix(in srgb, var(--rose) 78%, #E4A9A9);
-}
-
-.choices .field-error { grid-column: 1 / -1; }
-
 .rsvp-actions {
   display: grid;
   justify-items: center;
-  gap: .9rem;
+  gap: 1rem;
   margin-top: .4rem;
 }
-
 .rsvp-note {
-  margin: 0;
   max-width: 30rem;
+  margin: 0;
   text-align: center;
   font-size: var(--fs-small);
-  line-height: 1.6;
-  color: var(--night-faint);
+  line-height: 1.65;
+  color: var(--ink-soft);
 }
-
-.rsvp-note strong { font-style: normal; font-weight: 500; color: var(--gilding); }
-
+.rsvp-note strong { font-weight: 500; color: var(--ink); }
 .rsvp-status {
   margin: 0;
+  min-height: 1.3em;
   font-size: var(--fs-small);
-  color: var(--gilding);
-  min-height: 1.2em;
+  color: color-mix(in srgb, var(--burgundy) 82%, var(--ink) 18%);
 }
+.rsvp-status.is-error { color: #A03446; }
 
-.rsvp-status [aria-live] { display: inline; }
-.rsvp-status.is-error { color: color-mix(in srgb, var(--rose) 78%, #E4A9A9); }
-
-/* ── The reply preview ──────────────────────────────────────── */
+/* ── The reply preview — gratitude on paper ──────────────────── */
 .rsvp-preview {
   display: grid;
   gap: 1.2rem;
+  justify-items: center;
   text-align: center;
+  padding-top: 1.6rem;
+  border-top: 1px solid color-mix(in srgb, var(--burgundy) 20%, transparent);
 }
-
-.rsvp-preview .script-intro {
+.script-intro {
   margin: 0;
   font-family: var(--font-script);
-  font-size: clamp(1.9rem, 5vw, 2.6rem);
-  color: var(--gilding);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: color-mix(in srgb, var(--burgundy) 78%, var(--ink) 22%);
 }
-
 .rsvp-summary {
   display: grid;
-  gap: 0;
+  gap: .55rem;
   margin: 0;
-  border-top: 1px solid var(--hairline-light);
+  width: min(26rem, 100%);
 }
-
-.rsvp-summary > div {
+.rsvp-summary div {
   display: flex;
   justify-content: space-between;
-  gap: 1.4rem;
-  padding: .75rem .2rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--ivory) 9%, transparent);
-  text-align: left;
+  gap: 1.2rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
 }
-
 .rsvp-summary dt {
-  font-size: .62rem;
-  font-weight: 500;
-  letter-spacing: .22em;
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--night-faint);
-  padding-top: .3rem;
+  color: var(--charcoal);
 }
-
 .rsvp-summary dd {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.02rem;
-  color: var(--moonlit);
+  font-size: 1.05rem;
+  color: var(--ink);
   text-align: right;
-  overflow-wrap: anywhere;
 }
-
-.rsvp__demo-note { margin-inline: auto; }

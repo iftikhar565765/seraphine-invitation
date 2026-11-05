@@ -1,9 +1,10 @@
-# Nocturne — a midnight celestial wedding invitation
+# Seraphine — a royal palace wedding invitation
 
-An evening under the stars: a gold-sealed arch invitation resting on the
-night sky, painterly late roses, candlelight and a string of lights.
-Fully customisable in the browser with a guided, auto-saving visual
-editor — then published live with one click on Cloudflare.
+The golden gates of the palace at evening: a crowned crest, laurel and
+gilding, engraved ivory cards on midnight-navy walls, candlelight and a
+hall of mirrors. Fully customisable in the browser with a guided,
+auto-saving visual editor — then published live with one click on
+Cloudflare.
 
 **Live template pieces**
 
@@ -29,7 +30,7 @@ editor — then published live with one click on Cloudflare.
 
 ```bash
 npm install
-npx wrangler d1 migrations apply nocturne-invitations --local
+npx wrangler d1 migrations apply seraphine-invitations --local
 npm run dev          # http://localhost:8788
 ```
 

@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "nocturne-invitation",
+  "name": "seraphine-invitation",
   "main": "worker.js",
   "compatibility_date": "2026-09-01",
   "assets": {
@@ -11,7 +11,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "nocturne-invitations",
+      "database_name": "seraphine-invitations",
       "database_id": "REPLACE_WITH_YOUR_NEW_D1_DATABASE_ID"
     }
   ]

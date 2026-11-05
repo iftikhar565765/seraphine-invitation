@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   NOCTURNE · main.js
+   SERAPHINE · main.js
    Content injection · navigation · palette swatches · wedding-day
    string of lights · countdown · calendar files · reveals ·
    parallax · audio. Everything degrades gracefully:
@@ -228,21 +228,21 @@
   /* Removable & recolourable pieces of the suite — keyed in HTML
      via data-element-key and hidden through config.hiddenElements. */
   var elementLabels = {
-    'opening-florals-top': 'Pressed florals · top',
-    'opening-florals-bottom': 'Pressed florals · bottom',
-    'opening-glow': 'Candle glow',
+    'opening-florals-top': 'Gilded swag · top',
+    'opening-florals-bottom': 'Gilded swag · bottom',
+    'opening-glow': 'Lantern glow',
     'opening-watermark': 'Ampersand watermark',
     'opening-eyebrow': 'Opening introduction',
     'opening-names': 'Opening names',
-    'envelope-shadow': 'Card shadow',
-    'envelope-stamps': 'Postage stamp',
-    'envelope-flap': 'Vellum band',
-    'envelope-address': 'Addressee line',
-    'envelope-seal': 'Wax seal',
+    'envelope-shadow': 'Gate shadow',
+    'envelope-stamps': 'Gate finial',
+    'envelope-flap': 'The palace gates',
+    'envelope-address': 'Gate inscription',
+    'envelope-seal': 'The royal crest',
     'opening-hint': 'Invitation hint',
     'open-button': 'Open button',
-    'invite-spray-top': 'Card spray · top',
-    'invite-spray-bottom': 'Card spray · bottom',
+    'invite-spray-top': 'Hero crest',
+    'invite-spray-bottom': 'Hero ornament',
     'folio-quote': 'Keepsake quote card',
     'folio-note-one': 'Folio note i',
     'folio-note-two': 'Folio note ii',
@@ -253,23 +253,23 @@
     'story-note': 'Story handwritten note',
     'story-keepsake': 'Stamp & postmark',
     'std-glow': 'Candlelight wash',
-    'std-candles': 'The candles',
-    'std-note': 'Save-the-date note',
+    'std-candles': 'The crown',
+    'std-note': 'The announcement plate',
     'std-seal': 'Save-the-date seal',
     'detail-ceremony': 'Details · ceremony',
     'detail-reception': 'Details · reception',
     'detail-reply': 'Details · kindly reply',
-    'details-bouquet': 'The bouquet',
-    'details-arch': 'Monogram arch',
+    'details-bouquet': 'The particulars',
+    'details-arch': 'Details ornament',
     'palette-swatches': 'Palette swatches',
-    'palette-dresscode': 'Dress code card',
-    'day-words': 'String of lights',
-    'venue-lights': 'String lights',
-    'venue-ornament': 'Venue ornament',
+    'palette-dresscode': 'Court dress note',
+    'day-words': 'The garland of moments',
+    'venue-lights': 'The colonnade',
+    'venue-ornament': 'The palace facade',
     'rsvp-watermark': 'RSVP watermark',
     'rsvp-ornament': 'RSVP ornament',
     'countdown-clock': 'Countdown clock',
-    'countdown-wreath': 'Countdown wreath',
+    'countdown-wreath': 'Laurel wreath',
     'closing-swag': 'Closing swag',
     'closing-message': 'Closing message',
     'closing-seal': 'Closing wax seal',
@@ -629,14 +629,14 @@
   });
 
   var themePresets = {
-    burgundy: { burgundy: '#5D2029', deep: '#4B1A22', wine: '#35181D', crimson: '#8D1E2B', champagne: '#CDBB9A', soft: '#B9A47E', parchment: '#EEE8DD', ivory: '#F7F4EE', paper: '#FBF9F4', night: '#24090D', nightDeep: '#1A060A', olive: '#777957', oliveDeep: '#66684A', sage: '#A1A18A', rose: '#C5A0A0', ink: '#292622', inkSoft: '#4E4942', charcoal: '#70695F' },
-    rose: { burgundy: '#70404A', deep: '#56313A', wine: '#39252A', crimson: '#A65D69', champagne: '#D5B6A1', soft: '#C49A8F', parchment: '#F1E8E2', ivory: '#FAF4EF', paper: '#FFF9F5', night: '#2A171C', nightDeep: '#1B0E12', olive: '#81706B', oliveDeep: '#69595A', sage: '#B9A09A', rose: '#D19DA4', ink: '#30282A', inkSoft: '#55484B', charcoal: '#76696B' },
-    olive: { burgundy: '#53513A', deep: '#3F402E', wine: '#302F26', crimson: '#777957', champagne: '#CBB98E', soft: '#B6A274', parchment: '#EFEADD', ivory: '#F8F5EC', paper: '#FCFAF2', night: '#22231B', nightDeep: '#161711', olive: '#777957', oliveDeep: '#66684A', sage: '#A1A18A', rose: '#C5A0A0', ink: '#292920', inkSoft: '#4B4A3F', charcoal: '#6A695C' },
-    midnight: { burgundy: '#394253', deep: '#283141', wine: '#202733', crimson: '#65718A', champagne: '#C8B99A', soft: '#B2A17F', parchment: '#E8E6E0', ivory: '#F5F3EE', paper: '#FAF9F5', night: '#171C26', nightDeep: '#10141C', olive: '#777D83', oliveDeep: '#626970', sage: '#A1A7AA', rose: '#B8A0A7', ink: '#25282C', inkSoft: '#484D53', charcoal: '#686D72' }
+    gilt:      { burgundy: '#8C7442', deep: '#6E5A32', wine: '#232C40', crimson: '#7A2E3A', champagne: '#C8B486', soft: '#A9925F', parchment: '#EDE6D2', ivory: '#F6F1E3', paper: '#FBF7EC', night: '#151B29', nightDeep: '#0D1220', olive: '#7A8464', oliveDeep: '#666F52', sage: '#A8B096', rose: '#C9A9A0', ink: '#26241E', inkSoft: '#4E4940', charcoal: '#6E675C' },
+    royal:     { burgundy: '#6E2434', deep: '#571C29', wine: '#300F17', crimson: '#93374A', champagne: '#C9AE7E', soft: '#B09562', parchment: '#EFE6D4', ivory: '#F7F1E4', paper: '#FBF6EB', night: '#1D0E13', nightDeep: '#140709', olive: '#77804F', oliveDeep: '#616A3E', sage: '#A6AD8C', rose: '#C89C9C', ink: '#2A2225', inkSoft: '#52464B', charcoal: '#726470' },
+    verdant:   { burgundy: '#5E6B4F', deep: '#49543C', wine: '#2E3527', crimson: '#8A9168', champagne: '#C6B183', soft: '#AD9668', parchment: '#EFEADD', ivory: '#F7F4E9', paper: '#FBF9F0', night: '#171D14', nightDeep: '#10150D', olive: '#777957', oliveDeep: '#66684A', sage: '#A1A18A', rose: '#C5A0A0', ink: '#262822', inkSoft: '#4B4E42', charcoal: '#6A6D5C' },
+    porcelain: { burgundy: '#4E6E8E', deep: '#3C5874', wine: '#27394C', crimson: '#6F8BAD', champagne: '#C9B58C', soft: '#B09B70', parchment: '#F0EDE2', ivory: '#F8F5EC', paper: '#FCFAF2', night: '#16202C', nightDeep: '#0F1620', olive: '#77808A', oliveDeep: '#626B74', sage: '#A2AAB2', rose: '#B8A5A7', ink: '#242A30', inkSoft: '#485059', charcoal: '#68707A' }
   };
 
   function applyTheme() {
-    var themeName = Object.prototype.hasOwnProperty.call(themePresets, cfg.theme) ? cfg.theme : 'midnight';
+    var themeName = Object.prototype.hasOwnProperty.call(themePresets, cfg.theme) ? cfg.theme : 'gilt';
     var colors = themePresets[themeName];
     var root = document.documentElement;
     root.style.setProperty('--burgundy', colors.burgundy);
@@ -985,10 +985,10 @@
       var lines = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
-        'PRODID:-//Nocturne//Wedding Invitation//EN',
+        'PRODID:-//Seraphine//Wedding Invitation//EN',
         'CALSCALE:GREGORIAN',
         'BEGIN:VEVENT',
-        'UID:' + icsUTC(data.start.getTime()) + '-nocturne@invitation',
+        'UID:' + icsUTC(data.start.getTime()) + '-seraphine@invitation',
         'DTSTAMP:' + icsUTC(Date.now()),
         'DTSTART:' + icsUTC(data.start.getTime()),
         'DTEND:' + icsUTC(data.end.getTime()),

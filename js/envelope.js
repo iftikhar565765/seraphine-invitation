@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════
-   NOCTURNE · envelope.js
-   The opening experience — the wax seal breaks, the vellum band
-   slides away, and the card is lifted from the garden table.
+   SERAPHINE · envelope.js
+   The opening — the golden gates of the palace. The crest lifts,
+   the seam blooms with candlelight, and the gates part.
    · GSAP choreography when GSAP is available
    · Pure-CSS keyframe fallback when GSAP fails to load
    · Instant, motion-free handover under prefers-reduced-motion
@@ -16,23 +16,24 @@
 
   var body = document.body;
   var opening = document.getElementById('opening');
-  var envelope = document.getElementById('envelope');
+  var gates = document.getElementById('envelope');
   var skipBtn = document.getElementById('skip-intro');
   var openBtn = document.getElementById('open-invitation');
 
-  if (!opening || !envelope) {
+  if (!opening || !gates) {
     // Nothing to orchestrate — reveal the site immediately.
     body.classList.remove('intro-pending');
     body.classList.add('intro-done');
     return;
   }
 
-  var card = envelope.querySelector('.envelope__card');
-  var band = envelope.querySelector('.envelope__band');
-  var sealWrap = envelope.querySelector('.envelope__seal-wrap');
+  var left = gates.querySelector('.gate--left');
+  var right = gates.querySelector('.gate--right');
+  var crest = gates.querySelector('.gate-crest');
+  var seam = gates.querySelector('.gate-seam');
+  var glow = opening.querySelector('.opening__glow');
   var fadingParts = '.opening__eyebrow, .opening__names, .opening__hint, ' +
-                    '.opening__florals, .opening__glow, .opening__watermark, ' +
-                    '.table-shadow, .envelope__stamp';
+                    '.opening__florals, .opening__watermark, .gate-shadow';
 
   var reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   var hasGsap = typeof window.gsap !== 'undefined';
@@ -73,53 +74,58 @@
     document.dispatchEvent(new CustomEvent('heirloom:intro-complete'));
   }
 
-  /* ── GSAP choreography ───────────────────────────────────────── */
+  /* ── GSAP choreography — the parting of the gates ────────────── */
   function openWithGsap() {
-    envelope.classList.add('is-open');
+    gates.classList.add('is-open');
 
-    gsap.set(envelope, { rotation: -1.6 });
-    gsap.set(card, { yPercent: 0, scale: 1 });
-    gsap.set(band, { xPercent: 0, opacity: 1 });
-    gsap.set(sealWrap, { rotation: 0, y: 0, scale: 1, opacity: 1 });
+    gsap.set(gates, { scale: 1 });
+    gsap.set(left, { xPercent: 0, rotationY: 0 });
+    gsap.set(right, { xPercent: 0, rotationY: 0 });
+    gsap.set(crest, { scale: 1, opacity: 1 });
+    gsap.set(seam, { opacity: 0.55, scaleX: 1 });
+    if (glow) gsap.set(glow, { opacity: 1, scale: 1 });
 
     timeline = gsap.timeline({ onComplete: function () { completeIntro(false); } });
 
     timeline
-      /* 1 · the card acknowledges the touch */
-      .to(envelope, { rotation: 0, scale: 1.025, duration: 0.38, ease: 'power2.out' })
+      /* 1 · the crest acknowledges the touch */
+      .to(crest, { scale: 1.06, duration: 0.42, ease: 'power2.out' })
 
-      /* 2 · the wax seal cracks and drops from the card */
-      .to(sealWrap, {
-        rotation: 26, y: 84, scale: 0.7, opacity: 0,
-        duration: 0.72, ease: 'power1.in'
-      }, 0.1)
+      /* 2 · the hall's light gathers behind the seam */
+      .to(seam, { opacity: 1, duration: 0.5, ease: 'power1.inOut' }, 0.18)
+      .to(glow, { opacity: 1, scale: 1.18, duration: 0.9, ease: 'power1.inOut' }, 0.2)
 
-      /* 3 · the vellum band slides away like a sleeve */
-      .to(band, { xPercent: 125, opacity: 0, duration: 0.9, ease: 'power2.in' }, 0.46)
+      /* 3 · the crest rises with the light, as if carried through */
+      .to(crest, { scale: 1.45, opacity: 0, yPercent: -12, duration: 0.85, ease: 'power2.in' }, 0.5)
 
-      /* 4 · the card is lifted from the table toward the viewer */
-      .to(card, { yPercent: -7, scale: 1.9, duration: 0.98, ease: 'power2.in' }, 1.32)
+      /* 4 · the gates part — the grand reveal */
+      .to(left, { xPercent: -103, rotationY: 14, duration: 1.5, ease: 'power2.inOut' }, 1.02)
+      .to(right, { xPercent: 103, rotationY: -14, duration: 1.5, ease: 'power2.inOut' }, 1.02)
 
-      /* 5 · the table setting fades — the invitation begins */
-      .to(fadingParts, { opacity: 0, duration: 0.5, ease: 'power1.out' }, 1.42)
+      /* 5 · the seam blooms and dissolves into the hall */
+      .to(seam, { opacity: 0, scaleX: 30, duration: 1.15, ease: 'power2.in' }, 1.28)
 
-      /* 6 · the lifted card dissolves as the page materialises behind it */
-      .to(envelope, { scale: 2.02, opacity: 0, duration: 0.58, ease: 'power2.in' }, 1.78)
+      /* 6 · the court's frame quietly leaves the stage */
+      .to(fadingParts, { opacity: 0, duration: 0.6, ease: 'power1.out' }, 1.9)
 
-      /* 7 · the cover sheet lifts away, crossfading into the suite */
-      .to(opening, { opacity: 0, duration: 0.62, ease: 'power1.inOut' }, 1.86);
+      /* 7 · the gates dissolve as the suite materialises behind them */
+      .to(gates, { opacity: 0, scale: 1.04, duration: 0.6, ease: 'power2.in' }, 2.16)
+
+      /* 8 · the cover sheet lifts away, crossfading into the palace */
+      .to(opening, { opacity: 0, duration: 0.66, ease: 'power1.inOut' }, 2.24);
   }
 
   /* ── CSS-keyframes fallback (no GSAP) ────────────────────────── */
   function openWithFallback() {
-    var wait = reducedQuery.matches ? 300 : 3100;
-    envelope.classList.add('is-fallback-open');
+    var wait = reducedQuery.matches ? 300 : 2900;
+    gates.classList.add('is-fallback-open');
+    if (glow) glow.style.opacity = '0.9';
     window.setTimeout(function () { completeIntro(true); }, wait);
   }
 
   /* ── Reduced motion: quiet, near-instant handover ─────────────── */
   function openReduced() {
-    envelope.classList.add('is-open');
+    gates.classList.add('is-open');
     window.setTimeout(function () { completeIntro(true); }, 120);
   }
 
@@ -136,12 +142,12 @@
     else                           openWithFallback();
   }
 
-  /* Inside the customizer preview the card is an editable scene,
-     not a control — clicks select & recolour its parts instead of
-     opening it. Guests (top-level page) keep the full choreography. */
+  /* Inside the customizer preview the gates are an editable scene,
+     not a control — clicks select & recolour their parts instead of
+     opening them. Guests (top-level page) keep the full choreography. */
   var inEditor = window.parent !== window;
 
-  envelope.addEventListener('click', open);
+  gates.addEventListener('click', open);
   if (!inEditor && openBtn) openBtn.addEventListener('click', open);
 
   skipBtn.addEventListener('click', function () {
@@ -170,20 +176,18 @@
       try { ScrollTrigger.getAll().forEach(function (t) { t.kill(); }); } catch (e) {}
     }
 
-    // Reset the card to its sealed state.
-    envelope.classList.remove('is-open', 'is-fallback-open');
-    [card, band, sealWrap].forEach(function (el) {
+    // Reset the gates to their sealed state.
+    gates.classList.remove('is-open', 'is-fallback-open');
+    [left, right, crest, seam, glow, gates].forEach(function (el) {
       if (el && el.style) el.removeAttribute('style');
     });
-    envelope.querySelectorAll('.envelope__stamp').forEach(function (el) {
-      el.removeAttribute('style');
-    });
+    if (glow) glow.removeAttribute('style');
     opening.querySelectorAll('.opening__eyebrow, .opening__names, .opening__hint, ' +
-      '.opening__florals, .opening__glow, .opening__watermark, .table-shadow')
+      '.opening__florals, .opening__watermark, .gate-shadow')
       .forEach(function (el) { el.removeAttribute('style'); });
     if (hasGsap) {
-      gsap.set([card, band, sealWrap], { clearProps: 'all' });
-      gsap.set(envelope, { clearProps: 'all' });
+      gsap.set([left, right, crest, seam], { clearProps: 'all' });
+      gsap.set([gates, glow], { clearProps: 'all' });
     }
 
     // Reset the overlay.
@@ -200,7 +204,7 @@
     catch (e) { window.scrollTo(0, 0); }
 
     window.setTimeout(function () {
-      try { envelope.focus({ preventScroll: true }); } catch (e) { envelope.focus(); }
+      try { gates.focus({ preventScroll: true }); } catch (e) { gates.focus(); }
     }, 60);
   };
 
