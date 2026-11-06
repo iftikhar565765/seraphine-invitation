@@ -38,12 +38,16 @@
     aspect-ratio: 3 / 4.4;
   }
   .gate__scroll { inset: 6% 10%; width: 80%; }
-  .opening__florals { width: clamp(120px, 34vw, 180px); }
+  .opening__corner { width: clamp(72px, 22vw, 120px); }
   .opening__names { font-size: clamp(2.4rem, 11vw, 3.4rem); }
 
+  /* the court frame folds tighter on small courts */
+  .court-frame { outline-offset: -4px; }
+  .court-frame i { width: clamp(34px, 9vw, 52px); }
+
   .hero-names { letter-spacing: .03em; }
-  .hero-crest__laurel--l { left: -14%; }
-  .hero-crest__laurel--r { right: -14%; }
+  .hero-crest { width: clamp(160px, 44vw, 220px); }
+  .hero-arch { width: min(88vw, 460px); }
 
   .particulars-row { grid-template-columns: 1fr; gap: 1.6rem; }
 

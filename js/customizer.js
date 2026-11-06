@@ -1149,10 +1149,10 @@
   /* ── design step: curated moods & voices ───────────────────── */
 
   var THEME_META = [
-    { key: 'gilt', name: 'Gilt & Midnight', chips: ['#8C7442', '#F6F1E3', '#C8B486', '#151B29'] },
-    { key: 'royal', name: 'Royal Wine', chips: ['#6E2434', '#F7F1E4', '#C9AE7E', '#1D0E13'] },
-    { key: 'verdant', name: 'Imperial Garden', chips: ['#5E6B4F', '#F7F4E9', '#C6B183', '#171D14'] },
-    { key: 'porcelain', name: 'Porcelain & Gilt', chips: ['#4E6E8E', '#F8F5EC', '#C9B58C', '#16202C'] }
+    { key: 'gilt', name: 'Royal Crimson & Gold', chips: ['#8C6B2F', '#F7F1E1', '#D6B87E', '#2E0A15'] },
+    { key: 'royal', name: 'Garnet Royale', chips: ['#8C6B2F', '#F7F1E4', '#C9AE7E', '#2B0A18'] },
+    { key: 'verdant', name: 'Imperial Emerald', chips: ['#8C6B2F', '#F7F4E9', '#C6B183', '#12271B'] },
+    { key: 'porcelain', name: 'Versailles Porcelain', chips: ['#8C6B2F', '#F8F5EC', '#C9B58C', '#16202C'] }
   ];
 
   var TYPE_PAIRINGS = [
@@ -1332,9 +1332,9 @@
 
       groupLabel(inner, 'The website colours');
       var themeColorDefaults = {
-        gilt:      { primary: '#8C7442', darkBackground: '#151B29', paper: '#F6F1E3', accent: '#C8B486', botanical: '#7A8464', rose: '#C9A9A0' },
-        royal:     { primary: '#6E2434', darkBackground: '#1D0E13', paper: '#F7F1E4', accent: '#C9AE7E', botanical: '#77804F', rose: '#C89C9C' },
-        verdant:   { primary: '#5E6B4F', darkBackground: '#171D14', paper: '#F7F4E9', accent: '#C6B183', botanical: '#777957', rose: '#C5A0A0' },
+        gilt:      { primary: '#8C6B2F', darkBackground: '#2E0A15', paper: '#F7F1E1', accent: '#D6B87E', botanical: '#7A8464', rose: '#C9A9A0' },
+        royal:     { primary: '#7C1F3E', darkBackground: '#2B0A18', paper: '#F7F1E4', accent: '#C9AE7E', botanical: '#77804F', rose: '#C89C9C' },
+        verdant:   { primary: '#4F8A63', darkBackground: '#12271B', paper: '#F7F4E9', accent: '#C6B183', botanical: '#777957', rose: '#C5A0A0' },
         porcelain: { primary: '#4E6E8E', darkBackground: '#16202C', paper: '#F8F5EC', accent: '#C9B58C', botanical: '#77808A', rose: '#B8A5A7' }
       };
       var activeThemeColors = themeColorDefaults[config.theme] || themeColorDefaults.gilt;

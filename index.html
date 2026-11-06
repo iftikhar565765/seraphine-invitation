@@ -24,7 +24,7 @@
   <meta name="twitter:title" content="Eleanora &amp; Sebastian — An Invitation" data-meta-name="twitter:title" data-meta-content="content.socialTitle">
   <meta name="twitter:description" content="Open your invitation — Saturday, 18 September 2027, The Grand Orangery, Palais Lumière." data-meta-name="twitter:description" data-meta-content="content.socialDescription">
   <meta name="twitter:image" content="https://seraphine-invitation.glauxstudio.workers.dev/assets/og-card.jpg">
-  <meta name="theme-color" content="#0D1220">
+  <meta name="theme-color" content="#2E0A15">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -93,10 +93,18 @@
     </symbol>
 
     <!-- ══════════════════════════════════════════════════════════
-         THE ROYAL ORNAMENT LIBRARY — hand-drawn, line-gold
+         THE ROYAL ORNAMENT LIBRARY — hand-drawn, gilded
          ══════════════════════════════════════════════════════════ -->
 
-    <!-- The royal crown — imperial closed crown -->
+    <defs>
+      <linearGradient id="grad-gold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:color-mix(in srgb, var(--gilding) 78%, white 22%)" />
+        <stop offset=".55" style="stop-color:var(--champagne)" />
+        <stop offset="1" style="stop-color:var(--champagne-soft)" />
+      </linearGradient>
+    </defs>
+
+    <!-- The royal crown — imperial closed crown, gilded band -->
     <symbol id="orn-crown" viewBox="0 0 96 76">
       <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M27 52h42" />
@@ -106,9 +114,13 @@
         <path d="M31 52c10-2 22-2 34 0" opacity=".45" />
         <circle cx="48" cy="15" r="3.4" />
         <path d="M48 9.6V4m-2.8 2.8h5.6" />
-        <path d="M48 52.8l1.9 2.7-1.9 2.7-1.9-2.7Z" fill="currentColor" stroke="none" opacity=".9" />
-        <path d="M37.5 52.6l1.3 1.9-1.3 1.9-1.3-1.9Zm19.7 0 1.3 1.9-1.3 1.9-1.3-1.9Z" fill="currentColor" stroke="none" opacity=".7" />
+        <path d="M48 52.8l1.9 2.7-1.9 2.7-1.9-2.7Z" fill="url(#grad-gold)" stroke="none" />
+        <path d="M37.5 52.6l1.3 1.9-1.3 1.9-1.3-1.9Zm19.7 0 1.3 1.9-1.3 1.9-1.3-1.9Z" fill="url(#grad-gold)" stroke="none" opacity=".8" />
       </g>
+      <path d="M31 45c10-2.2 24-2.2 34 0v5.4c-10-2.2-24-2.2-34 0Z" fill="url(#grad-gold)" stroke="none" />
+      <circle cx="40" cy="47.6" r="1.7" style="fill:var(--crimson)" stroke="none" />
+      <circle cx="48" cy="46.9" r="1.7" style="fill:var(--crimson)" stroke="none" />
+      <circle cx="56" cy="47.6" r="1.7" style="fill:var(--crimson)" stroke="none" />
     </symbol>
 
     <!-- A laurel branch -->
@@ -145,21 +157,38 @@
       </g>
     </symbol>
 
-    <!-- Grand divider — hairlines, diamonds, fleur -->
+    <!-- Grand divider — hairlines, gilded diamonds, fleur -->
     <symbol id="orn-divider" viewBox="0 0 320 48">
       <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
         <path d="M6 24h106" />
         <path d="M208 24h106" />
-        <path d="M128 24l7-7 7 7-7 7Z" opacity=".7" />
-        <path d="M178 24l7-7 7 7-7 7Z" opacity=".7" />
         <g transform="translate(160 24) scale(.62)">
           <path d="M0-20c3.4 5.5 5 10.5 5 16 0 7-2.4 12-5 15.5C-2.4 8-5 3-5-4c0-5.5 1.6-10.5 5-16Z" />
           <path d="M-5.5-2C-11-1.5-15.5 2-16 8.5c4.5 2 9.5 1.4 13-1.5M5.5-2C11-1.5 15.5 2 16 8.5c-4.5 2-9.5 1.4-13-1.5" />
           <path d="M0 12v8" />
         </g>
       </g>
-      <circle cx="118" cy="24" r="1.4" fill="currentColor" stroke="none" opacity=".6" />
-      <circle cx="202" cy="24" r="1.4" fill="currentColor" stroke="none" opacity=".6" />
+      <path d="M128 24l7-7 7 7-7 7Z" fill="url(#grad-gold)" stroke="none" />
+      <path d="M178 24l7-7 7 7-7 7Z" fill="url(#grad-gold)" stroke="none" />
+      <circle cx="118" cy="24" r="1.6" fill="url(#grad-gold)" stroke="none" />
+      <circle cx="202" cy="24" r="1.6" fill="url(#grad-gold)" stroke="none" />
+    </symbol>
+
+    <!-- The palace pediment — a baroque arch above the gates -->
+    <symbol id="orn-arch" viewBox="0 0 360 100">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M36 92C36 50 100 16 180 16s144 34 144 76" />
+        <path d="M48 92C48 56 106 26 180 26s132 30 132 66" opacity=".6" />
+        <path d="M36 92h288" opacity=".8" />
+        <path d="M180 16v-8m-6 4 6-8 6 8" />
+        <path d="M166 30c4.5 6.5 6.5 12 6.5 18M194 30c-4.5 6.5-6.5 12-6.5 18" opacity=".7" />
+        <path d="M60 78c16-3 28-3 44 0M256 78c16-3 28-3 44 0" opacity=".55" />
+      </g>
+      <path d="M180 8l4.6 8-4.6 8-4.6-8Z" fill="url(#grad-gold)" stroke="none" />
+      <circle cx="180" cy="34" r="3" fill="url(#grad-gold)" stroke="none" />
+      <path d="M160 42c6.5 8 14 12 20 12s13.5-4 20-12c-6.5-5-13.5-7.5-20-7.5s-13.5 2.5-20 7.5Z" fill="url(#grad-gold)" stroke="none" opacity=".85" />
+      <circle cx="80" cy="92" r="2.6" fill="url(#grad-gold)" stroke="none" />
+      <circle cx="280" cy="92" r="2.6" fill="url(#grad-gold)" stroke="none" />
     </symbol>
 
     <!-- Acanthus corner filigree for the engraved plates -->
@@ -300,26 +329,34 @@
     </symbol>
   </svg>
 
+  <!-- the gilded border of the court — a frame around the whole invitation -->
+  <div class="court-frame" aria-hidden="true" data-element-key="court-frame">
+    <i class="tl"><svg viewBox="0 0 120 120"><use href="#orn-corner" /></svg></i>
+    <i class="tr"><svg viewBox="0 0 120 120"><use href="#orn-corner" /></svg></i>
+    <i class="bl"><svg viewBox="0 0 120 120"><use href="#orn-corner" /></svg></i>
+    <i class="br"><svg viewBox="0 0 120 120"><use href="#orn-corner" /></svg></i>
+  </div>
+
   <!-- ════════════════════════════════════════════════════════════
-       THE OPENING — the golden gates of the palace, sealed by
-       the royal crest. Touch, and the gates part.
+       THE OPENING — the gilded gates of the palace beneath a
+       baroque pediment, sealed by the royal crest. Touch, and
+       the gates part.
        ════════════════════════════════════════════════════════════ -->
   <section id="opening" class="opening" aria-label="Your invitation awaits">
-    <svg class="opening__florals opening__florals--tl" viewBox="0 0 320 84" aria-hidden="true" data-element-key="opening-florals-top">
-      <use href="#orn-swag" />
-    </svg>
-    <svg class="opening__florals opening__florals--br" viewBox="0 0 320 84" aria-hidden="true" data-element-key="opening-florals-bottom">
-      <use href="#orn-swag" />
-    </svg>
+    <img class="opening__corner opening__corner--tl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true" data-element-key="opening-corner-tl">
+    <img class="opening__corner opening__corner--tr" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true" data-element-key="opening-corner-tr">
+    <img class="opening__corner opening__corner--bl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true" data-element-key="opening-corner-bl">
+    <img class="opening__corner opening__corner--br" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true" data-element-key="opening-corner-br">
     <span class="opening__glow" aria-hidden="true" data-element-key="opening-glow"></span>
     <span class="opening__watermark" aria-hidden="true" data-element-key="opening-watermark">&amp;</span>
 
     <div class="opening__inner">
-      <p class="opening__eyebrow eyebrow" data-content="content.openingEyebrow" data-element-key="opening-eyebrow">You are respectfully invited to the wedding of</p>
+      <p class="opening__eyebrow eyebrow" data-content="content.openingEyebrow" data-element-key="opening-eyebrow">You are respectfully invited to the royal wedding of</p>
       <p class="opening__names script" data-content="couple.names" data-element-key="opening-names">Eleanora &amp; Sebastian</p>
 
       <div class="gate-stage">
         <div class="gate-shadow" aria-hidden="true" data-element-key="envelope-shadow"></div>
+        <svg class="gate-pediment" viewBox="0 0 360 100" aria-hidden="true" data-element-key="gate-pediment"><use href="#orn-arch" /></svg>
 
         <!-- The whole gate is one accessible control -->
         <button id="envelope" class="gates" type="button" aria-label="Open your invitation"
@@ -338,12 +375,8 @@
           </span>
 
           <span class="gate-crest" aria-hidden="true">
-            <svg class="gate-crest__crown" viewBox="0 0 96 64"><use href="#orn-crown" /></svg>
-            <span class="gate-crest__ring">
-              <span class="gate-crest__initials script" data-content="couple.initials">E · S</span>
-            </span>
-            <svg class="gate-crest__laurel gate-crest__laurel--l" viewBox="0 0 84 210"><use href="#orn-laurel" /></svg>
-            <svg class="gate-crest__laurel gate-crest__laurel--r" viewBox="0 0 84 210"><use href="#orn-laurel" /></svg>
+            <img class="gate-crest__art" src="assets/orn/crest-royal.webp" alt="" data-element-key="gate-crest-art">
+            <span class="gate-crest__initials script" data-content="couple.initials">E · S</span>
           </span>
 
           <span class="gate-seam" aria-hidden="true"></span>
@@ -418,17 +451,11 @@
     <section id="invitation" class="scene scene--hero" aria-labelledby="invitation-title">
       <span class="hero-glow" aria-hidden="true"></span>
       <div class="container hero-inner">
-        <div class="hero-crest reveal" data-element-key="invite-spray-top" role="img"
+        <figure class="hero-crest reveal" data-element-key="invite-spray-top" role="img"
           aria-label="The royal crest — a crowned laurel wreath holding the couple's monogram.">
-          <svg class="hero-crest__crown" viewBox="0 0 96 64" aria-hidden="true"><use href="#orn-crown" /></svg>
-          <span class="hero-crest__wing" aria-hidden="true">
-            <span class="hero-crest__ring">
-              <span class="hero-crest__initials script" data-content="couple.initials">E · S</span>
-            </span>
-            <svg class="hero-crest__laurel hero-crest__laurel--l" viewBox="0 0 84 210" aria-hidden="true"><use href="#orn-laurel" /></svg>
-            <svg class="hero-crest__laurel hero-crest__laurel--r" viewBox="0 0 84 210" aria-hidden="true"><use href="#orn-laurel" /></svg>
-          </span>
-        </div>
+          <img class="hero-crest__art" src="assets/orn/crest-royal.webp" alt="" aria-hidden="true">
+          <span class="hero-crest__initials script" aria-hidden="true" data-content="couple.initials">E · S</span>
+        </figure>
 
         <p class="hero-eyebrow eyebrow reveal" data-content="content.invitationEyebrow">Together with their families</p>
 
@@ -438,7 +465,7 @@
           <span class="hero-name foil reveal" data-content="couple.partner-two">Sebastian</span>
         </h1>
 
-        <p class="hero-lead reveal" data-content="content.invitationLead">request the pleasure of your company at the marriage celebration, to be held in the grand hall of the palace.</p>
+        <p class="hero-lead reveal" data-content="content.invitationLead">request the honour of your presence at the grand celebration of their marriage, to be held in the resplendent halls of the palace.</p>
 
         <svg class="hero-divider reveal" viewBox="0 0 320 48" aria-hidden="true"><use href="#orn-divider" /></svg>
 
@@ -468,10 +495,15 @@
             <p class="prose prose--dropcap reveal" data-content="content.storyParagraphOne">Every great story deserves a palace, and ours began far more humbly — a crowded bookshop, one shared umbrella, and a first conversation that outlasted the rain.</p>
             <p class="prose reveal" data-content="content.storyParagraphTwo">Six years, two cities and a thousand small kindnesses later, we are writing our next chapter in the grandest language we know — love. Nothing would mean more than to have you standing beside us when we do.</p>
             <p class="story-note hand reveal"><span data-content="content.storyNote">chapter the first, and all the rest</span><span class="story-note-credit" data-content="content.storyNoteCredit">— written in the margin of a menu, on our first trip</span></p>
+            <img class="story-rose reveal" src="assets/orn/rose-gold.webp" alt="" aria-hidden="true" data-element-key="story-rose">
           </div>
 
           <aside class="story-aside reveal">
             <div class="story-quote" data-element-key="folio-quote">
+              <img class="leaf-corner leaf-corner--tl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+              <img class="leaf-corner leaf-corner--tr" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+              <img class="leaf-corner leaf-corner--bl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+              <img class="leaf-corner leaf-corner--br" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
               <span class="story-quote__mark script" aria-hidden="true">“</span>
               <blockquote class="story-quote__text" data-content="content.storyQuote">Whatever our souls are made of, his and mine are the same.</blockquote>
               <p class="story-quote__label label-caps" data-content="content.storyQuoteLabel">— Emily Brontë, read aloud on our first walk home</p>
@@ -494,14 +526,14 @@
       <span class="std-glow" aria-hidden="true" data-element-key="std-glow"></span>
       <div class="container container--narrow">
         <div class="std-plate reveal" data-element-key="std-note">
-          <svg class="plate-corner plate-corner--tl" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
-          <svg class="plate-corner plate-corner--tr" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
-          <svg class="plate-corner plate-corner--bl" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
-          <svg class="plate-corner plate-corner--br" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
+          <img class="leaf-corner leaf-corner--tl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+          <img class="leaf-corner leaf-corner--tr" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+          <img class="leaf-corner leaf-corner--bl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+          <img class="leaf-corner leaf-corner--br" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
 
           <svg class="std-crown" viewBox="0 0 96 64" aria-hidden="true" data-element-key="std-candles"><use href="#orn-crown" /></svg>
           <h2 id="std-title" class="std-title" data-content="content.saveDateTitle">Save the Date</h2>
-          <p class="std-crossing script" data-content="content.saveDateCrossing">an evening of candlelight &amp; crowns</p>
+          <p class="std-crossing script" data-content="content.saveDateCrossing">a royal evening of candlelight &amp; crowns</p>
           <p class="std-numerals foil" data-content="wedding.numerals">18 · 09 · 2027</p>
           <p class="std-display" data-content="wedding.display">Saturday, 18 September 2027 · 6:30 in the evening</p>
           <p class="std-note" data-content="content.saveDateNote">The court is assembled. Add the date to your calendar and keep these particulars close.</p>
@@ -598,14 +630,15 @@
         <p class="kicker kicker--center reveal" data-content="content.paletteKicker">№ 05 · The Colours of the Court</p>
         <h2 id="palette-title" class="display display--h2 reveal"><span data-content="content.paletteTitleFirst">The wedding</span>
           <em class="script" data-content="content.paletteTitleSecond">palette</em></h2>
-        <p class="palette-intro prose reveal" data-content="content.paletteIntro">Midnight navy and leaf gold, warmed by candlelight and court wine — the colours of the palace at evening.</p>
+        <p class="palette-intro prose reveal" data-content="content.paletteIntro">Royal crimson and gleaming gold, ivory parchment and court wine — the colours of the palace in its wedding finery.</p>
 
         <ul id="palette-swatches" class="palette-swatches reveal" data-element-key="palette-swatches"></ul>
 
         <div class="dresscode reveal" data-element-key="palette-dresscode">
+          <img class="dresscode-rose" src="assets/orn/rose-gold.webp" alt="" aria-hidden="true">
           <span class="dresscode-label label-caps" data-content="content.dressCodeLabel">Attire · The Court Dress</span>
           <span class="dresscode-title" data-content="content.dressCodeTitle">Black tie</span>
-          <span class="dresscode-note" data-content="content.dressCodeNote">A little dressed up, a little gilded. Deep tones and quiet shine are welcome — wear what makes you feel wonderful.</span>
+          <span class="dresscode-note" data-content="content.dressCodeNote">Deep crimson, ivory and a flourish of gold are most welcome — dress as splendidly as you feel.</span>
         </div>
       </div>
     </section>
@@ -630,15 +663,14 @@
         <p class="kicker kicker--center reveal" data-content="content.venueKicker">№ 07 · The Place</p>
         <h2 id="venue-title" class="venue-title reveal" data-content="venue.name">The Grand Orangery, Palais Lumière</h2>
 
-        <svg class="venue-facade reveal" viewBox="0 0 420 160" aria-hidden="true" data-element-key="venue-ornament" role="img"
-          aria-label="The illustrated facade of the palace — a pediment above six columns and a colonnade.">
-          <use href="#orn-palace" />
-        </svg>
+        <img class="venue-facade-art reveal" src="assets/orn/palace-gold.webp" alt="" aria-hidden="true"
+          data-element-key="venue-ornament" role="img"
+          aria-label="The gilded palace — a grand dome, flanking towers and a baroque facade in gold.">
         <svg class="venue-colonnade reveal" viewBox="0 0 320 56" aria-hidden="true" data-element-key="venue-lights">
           <use href="#orn-colonnade" />
         </svg>
 
-        <p class="venue-description prose reveal" data-content="content.venueDescription">A baroque palace above the river — gilded gates, a hall of mirrors and an orangery glowing with a thousand candles for one perfect evening.</p>
+        <p class="venue-description prose reveal" data-content="content.venueDescription">A baroque palace above the river — gilded gates, a hall of mirrors and an orangery glowing with a thousand candles for one royal evening.</p>
 
         <div class="venue-sublines reveal">
           <p class="sub"><span class="label-caps" data-content="content.venueCeremonyLabel">Ceremony</span> <em data-content="content.venueCeremonyText">in the palace chapel, as the sun sets</em></p>
@@ -696,10 +728,10 @@
       <span class="watermark-script" aria-hidden="true" data-element-key="rsvp-watermark">répondez</span>
       <div class="container container--narrow">
         <div class="rsvp-card reveal">
-          <svg class="plate-corner plate-corner--tl" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
-          <svg class="plate-corner plate-corner--tr" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
-          <svg class="plate-corner plate-corner--bl" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
-          <svg class="plate-corner plate-corner--br" viewBox="0 0 120 120" aria-hidden="true"><use href="#orn-corner" /></svg>
+          <img class="leaf-corner leaf-corner--tl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+          <img class="leaf-corner leaf-corner--tr" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+          <img class="leaf-corner leaf-corner--bl" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
+          <img class="leaf-corner leaf-corner--br" src="assets/orn/corner-gold.webp" alt="" aria-hidden="true">
 
           <p class="kicker kicker--center kicker--ink" data-content="content.rsvpKicker">№ 08 · Your Reply</p>
           <h2 id="rsvp-title" class="rsvp-title" data-content="content.rsvpTitle">Kindly Respond</h2>
@@ -791,9 +823,7 @@
        Ⅹ · A CLOSING NOTE — the last page of the suite
        ══════════════════════════════════════════════════════════ -->
     <section id="closing" class="scene scene--closing" aria-labelledby="closing-title">
-      <svg class="closing-swag" viewBox="0 0 320 84" aria-hidden="true" data-element-key="closing-swag">
-        <use href="#orn-swag" />
-      </svg>
+      <img class="closing-garland reveal" src="assets/orn/garland-gold.webp" alt="" aria-hidden="true" data-element-key="closing-swag">
       <div class="container container--narrow">
         <p class="closing-script" data-content="content.closingScript">with all our love</p>
         <h2 id="closing-title" class="closing-names script" data-content="couple.names">Eleanora &amp; Sebastian</h2>

@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════
    SERAPHINE · gates.css
-   The opening — the golden gates of the palace, sealed by the
-   royal crest. Choreography states:
+   The opening — the gilded gates of the palace, crowned by a
+   baroque pediment and sealed by the royal crest. Choreography:
    · default      : gates closed, crest centred on the seam
    · .is-open     : GSAP drives the parting (transforms inline)
    · .is-fallback-open : pure-CSS keyframes when GSAP is absent
@@ -17,24 +17,26 @@
   padding: clamp(1rem, 4vh, 2.5rem);
   overflow: hidden auto;
   background:
-    radial-gradient(120% 85% at 50% 30%, color-mix(in srgb, var(--night) 88%, transparent) 0%, transparent 62%),
-    radial-gradient(80% 60% at 50% 108%, color-mix(in srgb, var(--wine) 46%, transparent) 0%, transparent 58%),
+    radial-gradient(120% 85% at 50% 30%, color-mix(in srgb, var(--night) 90%, transparent) 0%, transparent 62%),
+    radial-gradient(80% 60% at 50% 108%, color-mix(in srgb, var(--wine) 52%, transparent) 0%, transparent 58%),
     var(--night-deep);
   transition: opacity .95s var(--ease-soft);
 }
 .opening.is-leaving { opacity: 0; pointer-events: none; }
 
-/* gilded swags pinned to the corners of the court */
-.opening__florals {
+/* gilded baroque corners framing the invitation cover */
+.opening__corner {
   position: absolute;
-  width: clamp(150px, 24vw, 260px);
+  width: clamp(96px, 16vw, 160px);
   height: auto;
-  color: var(--champagne-soft);
-  opacity: .5;
+  opacity: .92;
   pointer-events: none;
+  filter: drop-shadow(0 4px 14px color-mix(in srgb, var(--night-deep) 70%, transparent));
 }
-.opening__florals--tl { top: clamp(6px, 2vh, 18px); left: 50%; transform: translateX(-50%) rotate(180deg); }
-.opening__florals--br { bottom: clamp(6px, 2vh, 18px); left: 50%; transform: translateX(-50%); }
+.opening__corner--tl { top: clamp(6px, 1.6vh, 16px); left: clamp(6px, 1.6vh, 16px); }
+.opening__corner--tr { top: clamp(6px, 1.6vh, 16px); right: clamp(6px, 1.6vh, 16px); transform: scaleX(-1); }
+.opening__corner--bl { bottom: clamp(6px, 1.6vh, 16px); left: clamp(6px, 1.6vh, 16px); transform: scaleY(-1); }
+.opening__corner--br { bottom: clamp(6px, 1.6vh, 16px); right: clamp(6px, 1.6vh, 16px); transform: scale(-1); }
 
 /* the warm light of the hall leaking through the seam */
 .opening__glow {
@@ -58,7 +60,7 @@
   font-family: var(--font-display);
   font-size: clamp(14rem, 38vw, 30rem);
   line-height: 1;
-  color: color-mix(in srgb, var(--champagne) 7%, transparent);
+  color: color-mix(in srgb, var(--champagne) 8%, transparent);
   pointer-events: none;
   user-select: none;
 }
@@ -71,12 +73,12 @@
   text-align: center;
   width: min(64rem, 100%);
 }
-.opening__eyebrow { color: var(--champagne-soft); }
+.opening__eyebrow { color: var(--champagne); }
 .opening__names {
   margin: 0 0 clamp(1.4rem, 4vh, 2.6rem);
   font-size: var(--fs-script);
   color: var(--ivory);
-  text-shadow: 0 2px 30px color-mix(in srgb, var(--night) 70%, transparent);
+  text-shadow: 0 2px 30px color-mix(in srgb, var(--night-deep) 80%, transparent);
 }
 
 /* ── The gate stage ──────────────────────────────────────────── */
@@ -93,8 +95,22 @@
   width: 86%;
   height: 12%;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(3, 5, 10, .55) 0%, transparent 68%);
+  background: radial-gradient(ellipse, rgba(10, 2, 4, .6) 0%, transparent 68%);
   filter: blur(8px);
+}
+
+/* the baroque pediment above the gates */
+.gate-pediment {
+  position: absolute;
+  left: 50%;
+  top: -6.2%;
+  transform: translateX(-50%);
+  width: 58%;
+  height: auto;
+  color: var(--champagne);
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 8px color-mix(in srgb, var(--night-deep) 75%, transparent));
 }
 
 .gates {
@@ -129,31 +145,44 @@
   inset: 0;
   background:
     linear-gradient(105deg,
-      color-mix(in srgb, var(--wine) 88%, black 12%) 0%,
-      color-mix(in srgb, var(--night) 92%, black 8%) 48%,
-      color-mix(in srgb, var(--wine) 90%, black 10%) 100%);
+      color-mix(in srgb, var(--wine) 90%, black 10%) 0%,
+      color-mix(in srgb, var(--crimson) 42%, var(--wine) 58%) 48%,
+      color-mix(in srgb, var(--wine) 92%, black 8%) 100%);
 }
 .gate--right .gate__panel { transform: scaleX(-1); }
 
-/* wrought-iron bars — the vertical gilding of the gate */
+/* velvet damask upon the gate leaves */
+.gate::after {
+  content: "";
+  position: absolute;
+  inset: 5% 12%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23D6B87E' stroke-opacity='.12' stroke-width='1'%3E%3Cpath d='M36 10c7 7 7 15 0 23-7-8-7-16 0-23Z'/%3E%3Cpath d='M36 18c4 4 4 8.5 0 13-4-4.5-4-9 0-13Z'/%3E%3Cpath d='M22 36c7 7 15 7 23 0-8-7-16-7-23 0Z' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: linear-gradient(to bottom, transparent 0, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 8%, black 92%, transparent 100%);
+  pointer-events: none;
+}
+
+/* wrought-gold bars — the vertical gilding of the gate */
 .gate::before {
   content: "";
   position: absolute;
   inset: 5% 12%;
   background:
     repeating-linear-gradient(90deg,
-      color-mix(in srgb, var(--champagne) 34%, transparent) 0 1px,
-      transparent 1px 18px);
+      color-mix(in srgb, var(--champagne) 38%, transparent) 0 1.5px,
+      transparent 1.5px 18px);
   mask-image: linear-gradient(to bottom, transparent 0, black 7%, black 93%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 7%, black 93%, transparent 100%);
-  opacity: .8;
+  opacity: .85;
+  pointer-events: none;
 }
 
 .gate__frame {
   position: absolute;
   inset: 3.5%;
-  border: 1px solid color-mix(in srgb, var(--champagne) 52%, transparent);
-  outline: 1px solid color-mix(in srgb, var(--champagne) 22%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--champagne) 58%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--champagne) 24%, transparent);
   outline-offset: 4px;
   pointer-events: none;
 }
@@ -164,8 +193,9 @@
   width: 68%;
   height: 84%;
   margin: auto;
-  color: var(--champagne-soft);
-  opacity: .85;
+  color: var(--champagne);
+  opacity: .9;
+  filter: drop-shadow(0 1px 3px color-mix(in srgb, var(--night-deep) 70%, transparent));
 }
 
 .gate__hinges {
@@ -174,14 +204,14 @@
   bottom: 12%;
   width: 7%;
   background: repeating-linear-gradient(to bottom,
-    color-mix(in srgb, var(--champagne) 40%, transparent) 0 2px,
-    transparent 2px 64px);
-  opacity: .7;
+    color-mix(in srgb, var(--champagne) 44%, transparent) 0 2.5px,
+    transparent 2.5px 64px);
+  opacity: .75;
 }
 .gate--left .gate__hinges { left: 2.5%; }
 .gate--right .gate__hinges { right: 2.5%; }
 
-/* ── The crest upon the seam ─────────────────────────────────── */
+/* ── The royal crest upon the seam ───────────────────────────── */
 .gate-crest {
   position: absolute;
   left: 50%;
@@ -191,40 +221,20 @@
   display: grid;
   justify-items: center;
   width: clamp(150px, 34vmin, 210px);
-  filter: drop-shadow(0 10px 30px rgba(3, 5, 10, .6));
+  filter: drop-shadow(0 10px 30px color-mix(in srgb, var(--night-deep) 80%, transparent));
 }
-.gate-crest__crown {
-  width: clamp(52px, 10vmin, 66px);
-  color: var(--gilding);
-  margin-bottom: -5px;
-  z-index: 2;
-}
-.gate-crest__ring {
-  display: grid;
-  place-items: center;
-  width: clamp(96px, 19vmin, 124px);
-  aspect-ratio: 1;
-  border: 1px solid color-mix(in srgb, var(--champagne) 62%, transparent);
-  outline: 1px solid color-mix(in srgb, var(--champagne) 26%, transparent);
-  outline-offset: 5px;
-  border-radius: 50%;
-  background: radial-gradient(circle,
-    color-mix(in srgb, var(--night-deep) 90%, transparent) 0%,
-    color-mix(in srgb, var(--night-deep) 40%, transparent) 78%);
+.gate-crest__art {
+  width: 100%;
+  height: auto;
 }
 .gate-crest__initials {
-  font-size: clamp(2rem, 5vmin, 2.7rem);
-  color: var(--gilding);
-}
-.gate-crest__laurel {
   position: absolute;
-  top: 34%;
-  width: clamp(30px, 6vmin, 40px);
-  color: var(--champagne-soft);
-  opacity: .9;
+  top: 42%;
+  font-size: clamp(1.5rem, 3.6vmin, 2.2rem);
+  letter-spacing: .08em;
+  color: color-mix(in srgb, var(--wine) 68%, black 32%);
+  text-shadow: 0 1px 1px color-mix(in srgb, white 42%, transparent);
 }
-.gate-crest__laurel--l { left: -18%; transform: scaleX(-1) rotate(6deg); }
-.gate-crest__laurel--r { right: -18%; transform: rotate(6deg); }
 
 /* the light between the doors */
 .gate-seam {
@@ -245,8 +255,8 @@
 }
 .gates:hover .gate-seam,
 .gates:focus-visible .gate-seam { opacity: .95; }
-.gates:hover .gate-crest__crown { transform: translateY(-2px); }
-.gate-crest__crown { transition: transform var(--t-med) var(--ease-soft); }
+.gates:hover .gate-crest__art { transform: translateY(-2px) scale(1.01); }
+.gate-crest__art { transition: transform var(--t-med) var(--ease-soft); }
 
 /* ── Below the gates ─────────────────────────────────────────── */
 .opening__hint {
@@ -257,7 +267,7 @@
   font-size: var(--fs-eyebrow);
   letter-spacing: .3em;
   text-transform: uppercase;
-  color: var(--champagne-soft);
+  color: var(--champagne);
 }
 .opening__hint-rule {
   width: clamp(28px, 6vw, 52px);

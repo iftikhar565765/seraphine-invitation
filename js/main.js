@@ -629,10 +629,10 @@
   });
 
   var themePresets = {
-    gilt:      { burgundy: '#8C7442', deep: '#6E5A32', wine: '#232C40', crimson: '#7A2E3A', champagne: '#C8B486', soft: '#A9925F', parchment: '#EDE6D2', ivory: '#F6F1E3', paper: '#FBF7EC', night: '#151B29', nightDeep: '#0D1220', olive: '#7A8464', oliveDeep: '#666F52', sage: '#A8B096', rose: '#C9A9A0', ink: '#26241E', inkSoft: '#4E4940', charcoal: '#6E675C' },
-    royal:     { burgundy: '#6E2434', deep: '#571C29', wine: '#300F17', crimson: '#93374A', champagne: '#C9AE7E', soft: '#B09562', parchment: '#EFE6D4', ivory: '#F7F1E4', paper: '#FBF6EB', night: '#1D0E13', nightDeep: '#140709', olive: '#77804F', oliveDeep: '#616A3E', sage: '#A6AD8C', rose: '#C89C9C', ink: '#2A2225', inkSoft: '#52464B', charcoal: '#726470' },
-    verdant:   { burgundy: '#5E6B4F', deep: '#49543C', wine: '#2E3527', crimson: '#8A9168', champagne: '#C6B183', soft: '#AD9668', parchment: '#EFEADD', ivory: '#F7F4E9', paper: '#FBF9F0', night: '#171D14', nightDeep: '#10150D', olive: '#777957', oliveDeep: '#66684A', sage: '#A1A18A', rose: '#C5A0A0', ink: '#262822', inkSoft: '#4B4E42', charcoal: '#6A6D5C' },
-    porcelain: { burgundy: '#4E6E8E', deep: '#3C5874', wine: '#27394C', crimson: '#6F8BAD', champagne: '#C9B58C', soft: '#B09B70', parchment: '#F0EDE2', ivory: '#F8F5EC', paper: '#FCFAF2', night: '#16202C', nightDeep: '#0F1620', olive: '#77808A', oliveDeep: '#626B74', sage: '#A2AAB2', rose: '#B8A5A7', ink: '#242A30', inkSoft: '#485059', charcoal: '#68707A' }
+    gilt:      { burgundy: '#8C6B2F', deep: '#6E5322', wine: '#471223', crimson: '#8E2740', champagne: '#D6B87E', soft: '#B5975F', parchment: '#EFE6CF', ivory: '#F7F1E1', paper: '#FCF7EA', night: '#2E0A15', nightDeep: '#1C040B', olive: '#7A8464', oliveDeep: '#666F52', sage: '#A8B096', rose: '#C9A9A0', ink: '#2E1B14', inkSoft: '#5B4232', charcoal: '#6E5F55' },
+    royal:     { burgundy: '#8C6B2F', deep: '#6E5322', wine: '#3D1024', crimson: '#7C1F3E', champagne: '#C9AE7E', soft: '#A98E5C', parchment: '#EFE6D4', ivory: '#F7F1E4', paper: '#FBF6EB', night: '#2B0A18', nightDeep: '#1A0410', olive: '#77804F', oliveDeep: '#616A3E', sage: '#A6AD8C', rose: '#C89C9C', ink: '#2A2026', inkSoft: '#524449', charcoal: '#72646E' },
+    verdant:   { burgundy: '#8C6B2F', deep: '#6E5322', wine: '#1E3A29', crimson: '#4F8A63', champagne: '#C6B183', soft: '#AD9668', parchment: '#EFEADD', ivory: '#F7F4E9', paper: '#FBF9F0', night: '#12271B', nightDeep: '#0A1810', olive: '#777957', oliveDeep: '#66684A', sage: '#A1A18A', rose: '#C5A0A0', ink: '#24291F', inkSoft: '#484E42', charcoal: '#6A6F5C' },
+    porcelain: { burgundy: '#8C6B2F', deep: '#6E5322', wine: '#27394C', crimson: '#6F8BAD', champagne: '#C9B58C', soft: '#B09B70', parchment: '#F0EDE2', ivory: '#F8F5EC', paper: '#FCFAF2', night: '#16202C', nightDeep: '#0F1620', olive: '#77808A', oliveDeep: '#626B74', sage: '#A2AAB2', rose: '#B8A5A7', ink: '#242A30', inkSoft: '#485059', charcoal: '#68707A' }
   };
 
   function applyTheme() {

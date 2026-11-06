@@ -1,55 +1,55 @@
 /* ═══════════════════════════════════════════════════════════════
    SERAPHINE · variables.css
    Design tokens — the whole visual identity in one place.
-   A royal palace at evening: midnight-navy walls, leaf-gold
-   gilding, engraved ivory cards and candlelight. The token names
-   follow the editor's colour roles so the theme picker recolours
-   every surface. The design reads dark-first: --night is the
-   palace wall, --ivory the engraved card, --gilding the leaf.
+   A king's wedding: crimson velvet palace walls, heavy gilding,
+   engraved ivory cards and candlelight. The token names follow
+   the editor's colour roles so the theme picker recolours every
+   surface. The design reads dark-first: --night is the velvet
+   wall, --ivory the engraved card, --champagne the leaf gold.
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
   /* ── Palette (theme presets refine these at runtime) ──────────
-     gilt       : midnight navy + leaf gold            (default)
-     royal      : court wine + antique gold
-     verdant    : imperial garden green + gilt
-     porcelain  : Versailles sky blue + gold           */
-  --burgundy:      #8C7442;
-  --burgundy-deep: #6E5A32;
-  --wine:          #232C40;
-  --crimson:       #7A2E3A;
-  --ivory:         #F6F1E3;
-  --paper-raised:  #FBF7EC;
-  --parchment:     #EDE6D2;
-  --champagne:     #C8B486;
-  --champagne-soft:#A9925F;
+     gilt       : royal crimson velvet + leaf gold     (default)
+     royal      : garnet brocade + antique gold
+     verdant    : imperial emerald + gilt
+     porcelain  : Versailles porcelain blue + gold     */
+  --burgundy:      #8C6B2F;
+  --burgundy-deep: #6E5322;
+  --wine:          #471223;
+  --crimson:       #8E2740;
+  --ivory:         #F7F1E1;
+  --paper-raised:  #FCF7EA;
+  --parchment:     #EFE6CF;
+  --champagne:     #D6B87E;
+  --champagne-soft:#B5975F;
   --olive:         #7A8464;
   --olive-deep:    #666F52;
   --sage:          #A8B096;
   --rose:          #C9A9A0;
-  --ink:           #26241E;
-  --ink-soft:      #4E4940;
-  --charcoal:      #6E675C;
-  /* the palace at evening — the whole of the night */
-  --night:         #151B29;
-  --night-deep:    #0D1220;
-  --gold:          #B99754;
+  --ink:           #2E1B14;
+  --ink-soft:      #5B4232;
+  --charcoal:      #6E5F55;
+  /* the palace in its wedding finery — the whole of the court */
+  --night:         #2E0A15;
+  --night-deep:    #1C040B;
+  --gold:          #CDA750;
 
   /* ── Derived palace tokens — computed from the theme colours,
      so every theme preset recolours them automatically ─────── */
   --wall-1:       var(--night-deep);
-  --wall-2:       color-mix(in srgb, var(--night) 84%, var(--burgundy) 16%);
+  --wall-2:       color-mix(in srgb, var(--night) 84%, var(--wine) 16%);
   --glass:        color-mix(in srgb, var(--night) 78%, transparent);
   --glass-deep:   color-mix(in srgb, var(--night-deep) 88%, transparent);
   --glass-edge:   color-mix(in srgb, var(--champagne) 26%, transparent);
-  --gilding:      color-mix(in srgb, var(--champagne) 78%, white 22%);
+  --gilding:      color-mix(in srgb, var(--champagne) 82%, white 18%);
   --gilding-soft: color-mix(in srgb, var(--champagne) 55%, transparent);
-  --gilding-deep: color-mix(in srgb, var(--champagne) 62%, var(--burgundy) 38%);
-  --moonlit:      color-mix(in srgb, var(--ivory) 90%, var(--champagne) 10%);
-  --moonlit-soft: color-mix(in srgb, var(--ivory) 62%, transparent);
-  --night-ink:    color-mix(in srgb, var(--ivory) 70%, transparent);
-  --night-faint:  color-mix(in srgb, var(--ivory) 40%, transparent);
-  --candle:       color-mix(in srgb, var(--champagne) 42%, #EBD3A0 58%);
+  --gilding-deep: color-mix(in srgb, var(--champagne) 58%, var(--burgundy) 42%);
+  --moonlit:      color-mix(in srgb, var(--ivory) 92%, var(--champagne) 8%);
+  --moonlit-soft: color-mix(in srgb, var(--ivory) 64%, transparent);
+  --night-ink:    color-mix(in srgb, var(--ivory) 72%, transparent);
+  --night-faint:  color-mix(in srgb, var(--ivory) 44%, transparent);
+  --candle:       color-mix(in srgb, var(--champagne) 46%, #F2D9A2 54%);
   --seal-wax:     linear-gradient(145deg,
                     color-mix(in srgb, var(--gold) 88%, white 12%),
                     color-mix(in srgb, var(--champagne-soft) 74%, black 26%) 55%,
@@ -86,18 +86,18 @@
   --pad-section: clamp(4.5rem, 12vh, 9rem);
   --pad-gutter: clamp(1.25rem, 5vw, 3rem);
 
-  /* ── Hairlines & shadows — leaf-gold edges on the night ────── */
-  --hairline: 1px solid color-mix(in srgb, var(--champagne) 26%, transparent);
-  --hairline-strong: 1px solid color-mix(in srgb, var(--champagne) 46%, transparent);
+  /* ── Hairlines & shadows — leaf-gold edges on the velvet ───── */
+  --hairline: 1px solid color-mix(in srgb, var(--champagne) 30%, transparent);
+  --hairline-strong: 1px solid color-mix(in srgb, var(--champagne) 50%, transparent);
   --hairline-light: 1px solid color-mix(in srgb, var(--ivory) 16%, transparent);
   --hairline-ink: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
-  --shadow-card:  0 1px 2px rgba(3, 5, 10, .5), 0 24px 60px rgba(3, 5, 10, .45);
-  --shadow-lift:  0 1px 3px rgba(3, 5, 10, .5), 0 26px 70px rgba(3, 5, 10, .55);
-  --shadow-flat:  0 1px 3px rgba(3, 5, 10, .4), 0 10px 26px rgba(3, 5, 10, .35);
+  --shadow-card:  0 1px 2px rgba(10, 2, 4, .5), 0 24px 60px rgba(10, 2, 4, .45);
+  --shadow-lift:  0 1px 3px rgba(10, 2, 4, .5), 0 26px 70px rgba(10, 2, 4, .55);
+  --shadow-flat:  0 1px 3px rgba(10, 2, 4, .4), 0 10px 26px rgba(10, 2, 4, .35);
   --shadow-seal:  0 3px 8px color-mix(in srgb, var(--burgundy) 45%, transparent),
                   0 14px 30px color-mix(in srgb, var(--burgundy) 28%, transparent);
   --shadow-plate: 0 1px 0 color-mix(in srgb, var(--gilding) 30%, transparent) inset,
-                  0 30px 80px rgba(3, 5, 10, .55);
+                  0 30px 80px rgba(10, 2, 4, .6);
 
   /* ── Motion ──────────────────────────────────────────────────── */
   --ease-soft: cubic-bezier(.22, .61, .21, 1);
