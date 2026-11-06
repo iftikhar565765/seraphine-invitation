@@ -5,7 +5,7 @@
    venue · countdown · closing · footer
    ═══════════════════════════════════════════════════════════════ */
 
-/* ══ Ⅰ · THE HERO — the throne room ════════════════════════════ */
+/* ══ Ⅰ · THE HERO — the grand hall ════════════════════════════ */
 .scene--hero {
   min-height: 100svh;
   display: grid;
@@ -33,7 +33,7 @@
   display: grid;
   justify-items: center;
 }
-/* the grand royal crest — static gilded art, monogram laid on top */
+/* the grand monogram medallion — static gilded art, initials laid on top */
 .hero-crest {
   position: relative;
   display: grid;
@@ -45,7 +45,7 @@
 .hero-crest__art { width: 100%; height: auto; }
 .hero-crest__initials {
   position: absolute;
-  top: 42%;
+  top: 45%;
   font-size: clamp(1.6rem, 4vmin, 2.3rem);
   letter-spacing: .08em;
   color: color-mix(in srgb, var(--wine) 68%, black 32%);
@@ -245,7 +245,8 @@
   border: 1px solid color-mix(in srgb, var(--burgundy) 30%, transparent);
   pointer-events: none;
 }
-.std-crown {
+/* the laurel emblem above the announcement title */
+.std-emblem {
   width: clamp(46px, 7vw, 62px);
   margin: 0 auto 1rem;
   color: color-mix(in srgb, var(--burgundy) 62%, var(--gold) 38%);

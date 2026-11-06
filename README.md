@@ -1,10 +1,10 @@
-# Seraphine — a royal palace wedding invitation
+# Seraphine — a wedding invitation
 
-The gilded gates of the palace at evening: a crowned royal crest, laurel
-and heavy gold-leaf ornament, engraved ivory cards on crimson-velvet
-walls, candlelight and a hall of mirrors. Fully customisable in the
-browser with a guided, auto-saving visual editor — then published live
-with one click on Cloudflare.
+The gilded gates of the palace at evening: a laurel monogram crest,
+heavy gold-leaf ornament, an aubusson rug field on crimson-velvet
+walls, engraved ivory cards, candlelight and a hall of mirrors. Fully
+customisable in the browser with a guided, auto-saving visual editor —
+then published live with one click on Cloudflare.
 
 **Live template pieces**
 

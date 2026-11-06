@@ -229,7 +229,7 @@
 }
 .gate-crest__initials {
   position: absolute;
-  top: 42%;
+  top: 45%;
   font-size: clamp(1.5rem, 3.6vmin, 2.2rem);
   letter-spacing: .08em;
   color: color-mix(in srgb, var(--wine) 68%, black 32%);
